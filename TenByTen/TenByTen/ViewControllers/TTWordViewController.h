@@ -14,6 +14,7 @@
 @interface TTWordViewController : UIViewController <NIPagingScrollViewDataSource,
                                                     NIPagingScrollViewDelegate>
 
-@property (nonatomic, strong) TTKeyWord * keyWord;
+@property (nonatomic, assign) NSUInteger itemIndex;
+@property (nonatomic, weak) IBOutlet NIPagingScrollView *  scrollView;
 
 @end

@@ -64,7 +64,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+   return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
@@ -165,7 +165,7 @@
 #pragma mark - Table view delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 65.0f;
+    return 40.0f;
 }
 
 
@@ -209,9 +209,7 @@
 	{
         TTWordViewController * vc = (TTWordViewController *) segue.destinationViewController;
         
-        vc.keyWord = [[TTDataManager sharedManager].currentHourList
-                            objectAtIndex: [self.tableView indexPathForSelectedRow].row];
-        
+        vc.itemIndex = [self.tableView indexPathForSelectedRow].row;
          
 	}
 }

@@ -13,7 +13,8 @@
 
 @interface TTWordViewController ()
 
-@property (nonatomic, assign) NSUInteger itemIndex;
+@property (nonatomic, strong) TTKeyWord * keyWord;
+//@property (nonatomic, strong) 	NIPagingScrollView * scrollView;
 
 @end
 
@@ -26,19 +27,45 @@
     self = [super initWithNibName:nibNameObrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _firstTime = YES;
+
     }
     return self;
+}
+
+- (void) dealloc {
+    self.scrollView = nil;
+    self.keyWord = nil;
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+ 
+    _firstTime = YES;
     
-    self.title = self.keyWord.word;
+    //self.scrollView = [[NIPagingScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.scrollView.dataSource = self;
+    self.scrollView.delegate = self;
+
+    [self.view addSubview:self.scrollView];
+    [self.scrollView reloadData];
     
 }
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
+    
+    [self setCurrentKeyWord];
+    self.scrollView.centerPageIndex = self.itemIndex;
+
+    
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear: animated];
+}
+
 
 - (void)viewDidUnload
 {
@@ -49,11 +76,16 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+
 }
 
 
+-(void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+}
+
 #pragma mark - NIPagingScrollViewDataSource
-- (NSInteger) numberOfPagesInPagingScrollView:		(NIPagingScrollView *) 	pagingScrollView	{
+- (NSInteger) numberOfPagesInPagingScrollView:	(NIPagingScrollView *) 	pagingScrollView	{
     
     return [[TTDataManager sharedManager].currentHourList count];
 }
@@ -67,15 +99,15 @@
     
     if (!detailView) {
         
-        detailView = [[TTWordImageView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
+        detailView = [[TTWordImageView alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width,
+                                                                              self.view.frame.size.height)];
+
     }
-    
-    
-    
+
     
     MBProgressHUD * hud =[MBProgressHUD showHUDAddedTo:detailView animated:YES];
     hud.graceTime = 0.5f;
-    hud.opacity = 0.0;
+    hud.opacity = 1.0;
     
     self.keyWord = [[TTDataManager sharedManager].currentHourList objectAtIndex: pageIndex];
     
@@ -92,6 +124,8 @@
     
     
     return detailView;
+    
+    
 }
 
 #pragma mark - NIPagingScrollViewDelegate
@@ -101,9 +135,18 @@
     }
     else {
         self.itemIndex = pagingScrollView.centerPageIndex;
-        self.title = [[TTDataManager sharedManager].currentHourList objectAtIndex:self.itemIndex];
+        [self setCurrentKeyWord];
     }
 
+}
+
+
+#pragma mark - internal methods
+
+-(void) setCurrentKeyWord {
+    self.keyWord = [[TTDataManager sharedManager].currentHourList objectAtIndex:self.itemIndex];
+    self.title = self.keyWord.word;
+    
 }
 
 @end

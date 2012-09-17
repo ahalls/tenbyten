@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTImageView.h"
+//#import "TTImageView.h"
 #import "NIPagingScrollViewPage.h"
 
 @interface TTWordImageView : UIView <NIPagingScrollViewPage>
 
 @property (nonatomic, readwrite, copy) NSString* reuseIdentifier;
-@property (nonatomic, strong) TTImageView * imageView;
+//@property (nonatomic, strong) TTImageView * imageView;
+@property (nonatomic, strong) UIImageView * imageView;
+
 
 @end

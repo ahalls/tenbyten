@@ -10,12 +10,15 @@
 
 @implementation TTWordImageView
 
+@synthesize pageIndex;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.imageView = [[TTImageView alloc] initWithFrame:frame];
+        self.imageView = [[UIImageView alloc] initWithFrame:frame];
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:self.imageView];
 
     }
