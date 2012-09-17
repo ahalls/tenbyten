@@ -25,5 +25,6 @@
 -(void) refresh;
 
 -(NSURLRequest *) requestThumbnailWithWord: (TTKeyWord *) aWord;
+-(NSURLRequest *) requestFullImageWithWord: (TTKeyWord *) aWord;
 
 @end

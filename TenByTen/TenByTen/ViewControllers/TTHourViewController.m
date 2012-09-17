@@ -13,6 +13,7 @@
 #import "TTKeyWord.h"
 #import "TTHourViewCell.h"
 #import "MBProgressHUD.h"
+#import "TTWordViewController.h"
 
 
 @interface TTHourViewController ()
@@ -199,4 +200,20 @@
 -(void) unregisterForNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+#pragma mark - Seques
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"TTPushWordView"])
+	{
+        TTWordViewController * vc = (TTWordViewController *) segue.destinationViewController;
+        
+        vc.keyWord = [[TTDataManager sharedManager].currentHourList
+                            objectAtIndex: [self.tableView indexPathForSelectedRow].row];
+        
+         
+	}
+}
+
 @end

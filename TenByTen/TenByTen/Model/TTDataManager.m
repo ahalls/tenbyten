@@ -91,6 +91,16 @@
 
 }
 
+-(NSURLRequest *) requestFullImageWithWord: (TTKeyWord *) aWord{
+    return [self.apiClient requestWithMethod:@"GET"
+                                        path: [NSString stringWithFormat:@"global/%@%@",
+                                               self.currentKeyDate.path,
+                                               [aWord fullFilename]]
+                                  parameters:nil];
+    
+}
+
+
 #pragma mark - Singleton class method
 // Discussion of this approach
 // http://stackoverflow.com/questions/2199106/thread-safe-instantiation-of-a-singleton

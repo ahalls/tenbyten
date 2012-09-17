@@ -12,6 +12,8 @@
 		F1897E341603442400963B5F /* TTImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1897E331603442400963B5F /* TTImageView.m */; };
 		F1897E37160345AE00963B5F /* BlankImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F1897E36160345AE00963B5F /* BlankImage.png */; };
 		F1897E391606AB9300963B5F /* BlankImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1897E381606AB9300963B5F /* BlankImage@2x.png */; };
+		F1897E5F1606D80C00963B5F /* TTWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1897E5E1606D80C00963B5F /* TTWordViewController.m */; };
+		F1897E631606E34200963B5F /* TTWordImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1897E621606E34200963B5F /* TTWordImageView.m */; };
 		F197AAAA1602AFBF00C6EFB9 /* TTDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F197AAA91602AFBF00C6EFB9 /* TTDataManager.m */; };
 		F197AAAD1602B0B200C6EFB9 /* TTTenXTenApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F197AAAC1602B0B200C6EFB9 /* TTTenXTenApiClient.m */; };
 		F197AAB01602B26C00C6EFB9 /* TTKeyDate.m in Sources */ = {isa = PBXBuildFile; fileRef = F197AAAF1602B26C00C6EFB9 /* TTKeyDate.m */; };
@@ -52,6 +54,10 @@
 		F1897E331603442400963B5F /* TTImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTImageView.m; sourceTree = "<group>"; };
 		F1897E36160345AE00963B5F /* BlankImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankImage.png; sourceTree = "<group>"; };
 		F1897E381606AB9300963B5F /* BlankImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlankImage@2x.png"; sourceTree = "<group>"; };
+		F1897E5D1606D80C00963B5F /* TTWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTWordViewController.h; sourceTree = "<group>"; };
+		F1897E5E1606D80C00963B5F /* TTWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTWordViewController.m; sourceTree = "<group>"; };
+		F1897E611606E34200963B5F /* TTWordImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTWordImageView.h; sourceTree = "<group>"; };
+		F1897E621606E34200963B5F /* TTWordImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTWordImageView.m; sourceTree = "<group>"; };
 		F197AAA81602AFBF00C6EFB9 /* TTDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTDataManager.h; sourceTree = "<group>"; };
 		F197AAA91602AFBF00C6EFB9 /* TTDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDataManager.m; sourceTree = "<group>"; };
 		F197AAAB1602B0B200C6EFB9 /* TTTenXTenApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTenXTenApiClient.h; sourceTree = "<group>"; };
@@ -117,6 +123,8 @@
 				F1897E3016033D6400963B5F /* TTHourViewCell.m */,
 				F1897E321603442400963B5F /* TTImageView.h */,
 				F1897E331603442400963B5F /* TTImageView.m */,
+				F1897E611606E34200963B5F /* TTWordImageView.h */,
+				F1897E621606E34200963B5F /* TTWordImageView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +158,8 @@
 			children = (
 				F197AAB81602CF0D00C6EFB9 /* TTHourViewController.h */,
 				F197AAB91602CF0D00C6EFB9 /* TTHourViewController.m */,
+				F1897E5D1606D80C00963B5F /* TTWordViewController.h */,
+				F1897E5E1606D80C00963B5F /* TTWordViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -370,6 +380,8 @@
 				F197AABD1603145C00C6EFB9 /* TTKeyWord.m in Sources */,
 				F1897E3116033D6400963B5F /* TTHourViewCell.m in Sources */,
 				F1897E341603442400963B5F /* TTImageView.m in Sources */,
+				F1897E5F1606D80C00963B5F /* TTWordViewController.m in Sources */,
+				F1897E631606E34200963B5F /* TTWordImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
