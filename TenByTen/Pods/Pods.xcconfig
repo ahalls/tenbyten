@@ -1,8 +1,8 @@
-PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
-HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
 OTHER_LDFLAGS = -ObjC -lTestFlight -lz -framework CoreGraphics -framework SystemConfiguration -framework UIKit
-PODS_ROOT = ${SRCROOT}/Pods
-LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/TestFlightSDK"
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/MBProgressHUD" "${PODS_ROOT}/BuildHeaders/Nimbus" "${PODS_ROOT}/BuildHeaders/TestFlightSDK"
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/Nimbus" "${PODS_ROOT}/Headers/TestFlightSDK"
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFHTTPRequestOperationLogger" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/MBProgressHUD" "${PODS_ROOT}/BuildHeaders/Nimbus" "${PODS_ROOT}/BuildHeaders/TestFlightSDK"
+PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
 ALWAYS_SEARCH_USER_PATHS = YES
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFHTTPRequestOperationLogger" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/Nimbus" "${PODS_ROOT}/Headers/TestFlightSDK"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/TestFlightSDK"
+HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
+PODS_ROOT = ${SRCROOT}/Pods

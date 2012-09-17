@@ -9,7 +9,7 @@
 #import "TTAppDelegate.h"
 
 #import "TTDataManager.h"
-
+#import "AFHTTPRequestOperationLogger.h"
 @implementation TTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,6 +17,8 @@
     // Override point for customization after application launch.
     
     [[TTDataManager sharedManager] start];
+    
+    [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
     
     return YES;
 }

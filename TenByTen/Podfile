@@ -1,5 +1,6 @@
 platform :ios
 pod 'AFNetworking'
+pod 'AFHTTPRequestOperationLogger'
 pod 'MBProgressHUD'
 pod 'TestFlightSDK'
 pod 'Nimbus/PagingScrollView'
