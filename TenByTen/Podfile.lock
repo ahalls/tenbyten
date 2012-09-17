@@ -1,0 +1,13 @@
+PODS:
+  - AFNetworking (1.0RC2)
+  - MBProgressHUD (0.5)
+  - Nimbus/Core (0.9.3)
+  - Nimbus/PagingScrollView (0.9.3):
+    - Nimbus/Core
+  - TestFlightSDK (1.1)
+
+DEPENDENCIES:
+  - AFNetworking
+  - MBProgressHUD
+  - Nimbus/PagingScrollView
+  - TestFlightSDK

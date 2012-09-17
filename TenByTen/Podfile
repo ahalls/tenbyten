@@ -1,0 +1,6 @@
+platform :ios
+pod 'AFNetworking'
+pod 'MBProgressHUD'
+pod 'TestFlightSDK'
+pod 'Nimbus/PagingScrollView'
+
