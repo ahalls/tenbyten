@@ -71,7 +71,7 @@
 		F197AAB91602CF0D00C6EFB9 /* TTHourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHourViewController.m; sourceTree = "<group>"; };
 		F197AABB1603145C00C6EFB9 /* TTKeyWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKeyWord.h; sourceTree = "<group>"; };
 		F197AABC1603145C00C6EFB9 /* TTKeyWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKeyWord.m; sourceTree = "<group>"; };
-		F1F88BFE16029BBB005C375F /* TenByTen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenByTen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1F88BFE16029BBB005C375F /* 10x10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 10x10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1F88C0216029BBB005C375F /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F1F88C0416029BBB005C375F /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1F88C0616029BBB005C375F /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,7 +178,7 @@
 		F1F88BFF16029BBB005C375F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1F88BFE16029BBB005C375F /* TenByTen.app */,
+				F1F88BFE16029BBB005C375F /* 10x10.app */,
 				F1F88C2216029BBC005C375F /* TenByTenTests.octest */,
 			);
 			name = Products;
@@ -263,7 +263,7 @@
 			);
 			name = TenByTen;
 			productName = TenByTen;
-			productReference = F1F88BFE16029BBB005C375F /* TenByTen.app */;
+			productReference = F1F88BFE16029BBB005C375F /* 10x10.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F1F88C2116029BBC005C375F /* TenByTenTests */ = {
@@ -498,7 +498,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TenByTen/TenByTen-Prefix.pch";
 				INFOPLIST_FILE = "TenByTen/TenByTen-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = 10x10;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -510,7 +510,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TenByTen/TenByTen-Prefix.pch";
 				INFOPLIST_FILE = "TenByTen/TenByTen-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = 10x10;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
