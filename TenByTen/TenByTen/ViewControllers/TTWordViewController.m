@@ -128,17 +128,17 @@
     
     self.keyWord = [[TTDataManager sharedManager].currentHourList objectAtIndex: pageIndex];
     
-    [detailView.imageView setImageWithURLRequest:
-     [[TTDataManager sharedManager] requestFullImageWithWord: self.keyWord]
-                                placeholderImage: nil
-                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                             [hud hide: YES];
-                                         }
-                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                                             [hud hide: YES];
-                                             NSLog(@"requestFullImageWithWord: %@", error);
-                                         } ];
-    
+//    [detailView.imageView setImageWithURLRequest:
+//     [[TTDataManager sharedManager] requestFullImageWithWord: self.keyWord]
+//                                placeholderImage: nil
+//                                         success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+//                                             [hud hide: YES];
+//                                         }
+//                                         failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+//                                             [hud hide: YES];
+//                                             NSLog(@"requestFullImageWithWord: %@", error);
+//                                         } ];
+//    
     
     return detailView;
     

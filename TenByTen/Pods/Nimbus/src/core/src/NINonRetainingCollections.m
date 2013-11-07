@@ -18,20 +18,24 @@
 
 #import "NINonRetainingCollections.h"
 
+#if !defined(__has_feature) || !__has_feature(objc_arc)
+#error "Nimbus requires ARC support."
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 NSMutableArray* NICreateNonRetainingMutableArray(void) {
-  return (NSMutableArray *)CFArrayCreateMutable(nil, 0, nil);
+  return (__bridge_transfer NSMutableArray *)CFArrayCreateMutable(nil, 0, nil);
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 NSMutableDictionary* NICreateNonRetainingMutableDictionary(void) {
-  return (NSMutableDictionary *)CFDictionaryCreateMutable(nil, 0, nil, nil);
+  return (__bridge_transfer NSMutableDictionary *)CFDictionaryCreateMutable(nil, 0, nil, nil);
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 NSMutableSet* NICreateNonRetainingMutableSet(void) {
-  return (NSMutableSet *)CFSetCreateMutable(nil, 0, nil);
+  return (__bridge_transfer NSMutableSet *)CFSetCreateMutable(nil, 0, nil);
 }
+

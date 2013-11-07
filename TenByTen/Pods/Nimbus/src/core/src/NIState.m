@@ -18,6 +18,10 @@
 
 #import "NIInMemoryCache.h"
 
+#if !defined(__has_feature) || !__has_feature(objc_arc)
+#error "Nimbus requires ARC support."
+#endif
+
 static NIImageMemoryCache* sNimbusGlobalMemoryCache = nil;
 static NSOperationQueue* sNimbusGlobalOperationQueue = nil;
 
@@ -31,8 +35,8 @@ static NSOperationQueue* sNimbusGlobalOperationQueue = nil;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 + (void)setImageMemoryCache:(NIImageMemoryCache *)imageMemoryCache {
   if (sNimbusGlobalMemoryCache != imageMemoryCache) {
-    [sNimbusGlobalMemoryCache release];
-    sNimbusGlobalMemoryCache = [imageMemoryCache retain];
+    sNimbusGlobalMemoryCache = nil;
+    sNimbusGlobalMemoryCache = imageMemoryCache;
   }
 }
 
@@ -49,8 +53,8 @@ static NSOperationQueue* sNimbusGlobalOperationQueue = nil;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 + (void)setNetworkOperationQueue:(NSOperationQueue *)queue {
   if (sNimbusGlobalOperationQueue != queue) {
-    [sNimbusGlobalOperationQueue release];
-    sNimbusGlobalOperationQueue = [queue retain];
+    sNimbusGlobalOperationQueue = nil;
+    sNimbusGlobalOperationQueue = queue;
   }
 }
 

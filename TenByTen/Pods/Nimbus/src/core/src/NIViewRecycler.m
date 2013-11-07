@@ -18,8 +18,12 @@
 
 #import "NimbusCore.h"
 
+#if !defined(__has_feature) || !__has_feature(objc_arc)
+#error "Nimbus requires ARC support."
+#endif
+
 @interface NIViewRecycler()
-@property (nonatomic, readwrite, retain) NSMutableDictionary* reuseIdentifiersToRecycledViews;
+@property (nonatomic, readwrite, NI_STRONG) NSMutableDictionary* reuseIdentifiersToRecycledViews;
 @end
 
 
@@ -34,10 +38,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-
-  NI_RELEASE_SAFELY(_reuseIdentifiersToRecycledViews);
-
-  [super dealloc];
 }
 
 
@@ -78,7 +78,6 @@
   NSMutableArray* views = [_reuseIdentifiersToRecycledViews objectForKey:reuseIdentifier];
   UIView<NIRecyclableView>* view = [views lastObject];
   if (nil != view) {
-    [[view retain] autorelease]; // Ensure that this object lives for the rest of the call stack.
     [views removeLastObject];
     if ([view respondsToSelector:@selector(prepareForReuse)]) {
       [view prepareForReuse];
@@ -107,7 +106,7 @@
 
   NSMutableArray* views = [_reuseIdentifiersToRecycledViews objectForKey:reuseIdentifier];
   if (nil == views) {
-    views = [[[NSMutableArray alloc] init] autorelease];
+    views = [[NSMutableArray alloc] init];
     [_reuseIdentifiersToRecycledViews setObject:views forKey:reuseIdentifier];
   }
   [views addObject:view];
@@ -117,6 +116,32 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)removeAllViews {
   [_reuseIdentifiersToRecycledViews removeAllObjects];
+}
+
+
+@end
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+@implementation NIRecyclableView
+
+@synthesize reuseIdentifier = _reuseIdentifier;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+  if ((self = [super initWithFrame:CGRectZero])) {
+    _reuseIdentifier = reuseIdentifier;
+  }
+  return self;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (id)initWithFrame:(CGRect)frame {
+  return [self initWithReuseIdentifier:nil];
 }
 
 

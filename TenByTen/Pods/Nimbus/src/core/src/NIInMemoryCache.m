@@ -22,11 +22,15 @@
 
 #import <UIKit/UIKit.h>
 
+#if !defined(__has_feature) || !__has_feature(objc_arc)
+#error "Nimbus requires ARC support."
+#endif
+
 @interface NIMemoryCache()
 // Mapping from a name (usually a URL) to an internal object.
-@property (nonatomic, readwrite, retain) NSMutableDictionary* cacheMap;
+@property (nonatomic, readwrite, NI_STRONG) NSMutableDictionary* cacheMap;
 // A linked list of least recently used cache objects. Most recently used is the tail.
-@property (nonatomic, readwrite, retain) NILinkedList* lruCacheObjects;
+@property (nonatomic, readwrite, NI_STRONG) NILinkedList* lruCacheObjects;
 @end
 
 
@@ -45,12 +49,12 @@
 /**
  * @brief The object stored in the cache.
  */
-@property (nonatomic, readwrite, retain) id object;
+@property (nonatomic, readwrite, NI_STRONG) id object;
 
 /**
  * @brief The date after which the image is no longer valid and should be removed from the cache.
  */
-@property (nonatomic, readwrite, retain) NSDate* expirationDate;
+@property (nonatomic, readwrite, NI_STRONG) NSDate* expirationDate;
 
 /**
  * @brief The last time this image was accessed.
@@ -60,12 +64,12 @@
  * images. When the memory limit is reached, we sort the cache based on the last access times and
  * then prune images until we're under the memory limit again.
  */
-@property (nonatomic, readwrite, retain) NSDate* lastAccessTime;
+@property (nonatomic, readwrite, NI_STRONG) NSDate* lastAccessTime;
 
 /**
  * @brief The location of this object in the least-recently used linked list.
  */
-@property (nonatomic, readwrite, assign) NILinkedListLocation* lruLocation;
+@property (nonatomic, readwrite, NI_STRONG) NILinkedListLocation* lruLocation;
 
 /**
  * @brief Determine whether this cache entry has past its expiration date.
@@ -91,11 +95,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-
-  NI_RELEASE_SAFELY(_cacheMap);
-  NI_RELEASE_SAFELY(_lruCacheObjects);
-
-  [super dealloc];
 }
 
 
@@ -118,6 +117,19 @@
                                                object: nil];
   }
   return self;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (NSString *)description {
+  return [NSString stringWithFormat:
+          @"<%@"
+          @" lruObjects: %@"
+          @" cache map: %@"
+          @">",
+          [super description],
+          self.lruCacheObjects,
+          self.cacheMap];
 }
 
 
@@ -174,8 +186,10 @@
     return;
   }
 
-  [self willRemoveObject:[self cacheInfoForName:name].object withName:name];
+  NIMemoryCacheInfo* cacheInfo = [self cacheInfoForName:name];
+  [self willRemoveObject:cacheInfo.object withName:name];
 
+  [self.lruCacheObjects removeObjectAtLocation:cacheInfo.lruLocation];
   [self.cacheMap removeObjectForKey:name];
 }
 
@@ -235,7 +249,7 @@
 
   // Create a new cache entry.
   if (nil == info) {
-    info = [[[NIMemoryCacheInfo alloc] init] autorelease];
+    info = [[NIMemoryCacheInfo alloc] init];
     info.name = name;
   }
 
@@ -268,7 +282,7 @@
     }
   }
 
-  return [[object retain] autorelease];
+  return object;
 }
 
 
@@ -331,9 +345,19 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)removeAllObjectsWithPrefix:(NSString *)prefix {
+  for (NSString* key in [self.cacheMap copy]) {
+    if ([key hasPrefix:prefix]) {
+      [self removeObjectWithName:key];
+    }
+  }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)removeAllObjects {
-  self.cacheMap = [[[NSMutableDictionary alloc] init] autorelease];
-  self.lruCacheObjects = [[[NILinkedList alloc] init] autorelease];
+  self.cacheMap = [[NSMutableDictionary alloc] init];
+  self.lruCacheObjects = [[NILinkedList alloc] init];
 }
 
 
@@ -350,7 +374,7 @@
       [self removeCacheInfoForName:name];
     }
   }
-  NI_RELEASE_SAFELY(cacheMap);
+  cacheMap = nil;
 }
 
 
@@ -376,21 +400,26 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)dealloc {
-  NI_RELEASE_SAFELY(_name);
-  NI_RELEASE_SAFELY(_object);
-  NI_RELEASE_SAFELY(_expirationDate);
-  NI_RELEASE_SAFELY(_lastAccessTime);
-  _lruLocation = nil;
-
-  [super dealloc];
+- (BOOL)hasExpired {
+  return (nil != _expirationDate
+          && [[NSDate date] timeIntervalSinceDate:_expirationDate] >= 0);
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)hasExpired {
-  return (nil != _expirationDate
-          && [[NSDate date] timeIntervalSinceDate:_expirationDate] >= 0);
+- (NSString *)description {
+  return [NSString stringWithFormat:
+          @"<%@"
+          @" name: %@"
+          @" object: %@"
+          @" expiration date: %@"
+          @" last access time: %@"
+          @">",
+          [super description],
+          self.name,
+          self.object,
+          self.expirationDate,
+          self.lastAccessTime];
 }
 
 
@@ -489,9 +518,6 @@
   if (nil == object || ![object isKindOfClass:[UIImage class]]) {
     return; // COV_NF_LINE
   }
-
-  NIMemoryCacheInfo* info = [self cacheInfoForName:name];
-  [self.lruCacheObjects removeObjectAtLocation:info.lruLocation];
 
   self.numberOfPixels -= [self numberOfPixelsUsedByImage:object];
 }

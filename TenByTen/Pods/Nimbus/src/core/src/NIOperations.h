@@ -17,7 +17,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "NIBlocks.h"
+#import "NIPreprocessorMacros.h" /* for NI_WEAK */
+
+@class NIOperation;
+
+typedef void (^NIOperationBlock)(NIOperation* operation);
+typedef void (^NIOperationDidFailBlock)(NIOperation* operation, NSError* error);
 
 /**
  * For writing code that runs concurrently.
@@ -45,45 +50,19 @@
  */
 @interface NIOperation : NSOperation
 
-@property (readwrite, assign) id<NIOperationDelegate> delegate;
-@property (readonly, retain) NSError* lastError;
+@property (readwrite, NI_WEAK) id<NIOperationDelegate> delegate;
+@property (readonly,  NI_STRONG) NSError* lastError;
 @property (readwrite, assign) NSInteger tag;
 
-#if NS_BLOCKS_AVAILABLE
-
-@property (readwrite, copy) NIBasicBlock didStartBlock;
-@property (readwrite, copy) NIBasicBlock didFinishBlock;
-@property (readwrite, copy) NIErrorBlock didFailWithErrorBlock;
-@property (readwrite, copy) NIBasicBlock willFinishBlock;
-
-#endif // #if NS_BLOCKS_AVAILABLE
+@property (readwrite, copy) NIOperationBlock didStartBlock;
+@property (readwrite, copy) NIOperationBlock didFinishBlock;
+@property (readwrite, copy) NIOperationDidFailBlock didFailWithErrorBlock;
+@property (readwrite, copy) NIOperationBlock willFinishBlock;
 
 - (void)didStart;
 - (void)didFinish;
 - (void)didFailWithError:(NSError *)error;
 - (void)willFinish;
-
-@end
-
-/**
- * An operation that makes a network request.
- *
- * Provides asynchronous network request support when added to an NSOperationQueue.
- *
- * If the url provided is a file url, then the file will be loaded from disk instead.
- *
- *      @ingroup Operations
- */
-@interface NINetworkRequestOperation : NIOperation
-
-// Designated initializer.
-- (id)initWithURL:(NSURL *)url;
-
-@property (readwrite, copy) NSURL* url;
-@property (readwrite, assign) NSTimeInterval timeout; // Default: 60
-@property (readwrite, assign) NSURLRequestCachePolicy cachePolicy; // Default: NSURLRequestUseProtocolCachePolicy
-@property (readonly, retain) NSData* data;
-@property (readwrite, retain) id processedObject;
 
 @end
 
@@ -158,7 +137,6 @@
  */
 
 
-#if NS_BLOCKS_AVAILABLE
 /** @name Blocks */
 
 /**
@@ -198,7 +176,6 @@
  *
  *      @fn NIOperation::willFinishBlock
  */
-#endif // #if NS_BLOCKS_AVAILABLE
 
 
 /**
@@ -230,57 +207,4 @@
  * In the operation's thread, notify the delegate that the operation will finish successfully.
  *
  *      @fn NIOperation::willFinish
- */
-
-
-// NINetworkRequestOperation
-
-/** @name Creating an Operation */
-
-/**
- * Initializes a newly allocated network operation with a given url.
- *
- *      @fn NINetworkRequestOperation::initWithURL:
- */
-
-
-/** @name Configuring the Operation */
-
-/**
- * The url that will be loaded in the network operation.
- *
- *      @fn NINetworkRequestOperation::url
- */
-
-/**
- * The number of seconds that may pass before a request gives up and fails.
- *
- *      @fn NINetworkRequestOperation::timeout
- */
-
-/**
- * The request cache policy to use.
- *
- *      @fn NINetworkRequestOperation::cachePolicy
- */
-
-
-/** @name Operation Results */
-
-/**
- * The data received from the request.
- *
- * Will be nil if the request failed.
- *
- *      @sa NIOperation::lastError
- *      @fn NINetworkRequestOperation::data
- */
-
-/**
- * An object created from the data that was fetched.
- *
- * Will be nil if the request failed.
- *
- *      @sa NIOperation::lastError
- *      @fn NINetworkRequestOperation::processedObject
  */

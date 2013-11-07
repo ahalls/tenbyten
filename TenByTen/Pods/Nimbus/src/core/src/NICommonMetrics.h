@@ -17,6 +17,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#if defined __cplusplus
+extern "C" {
+#endif
+
 /**
  * For common system metrics.
  *
@@ -71,6 +75,23 @@
 #define UIViewAutoresizingFlexibleDimensions (UIViewAutoresizingFlexibleWidth \
                                               | UIViewAutoresizingFlexibleHeight)
 #endif
+
+#ifndef UIViewAutoresizingNavigationBar
+#define UIViewAutoresizingNavigationBar (UIViewAutoresizingFlexibleWidth \
+                                         | UIViewAutoresizingFlexibleBottomMargin)
+#endif
+
+#ifndef UIViewAutoresizingToolbar
+#define UIViewAutoresizingToolbar (UIViewAutoresizingFlexibleWidth \
+                                   | UIViewAutoresizingFlexibleTopMargin)
+#endif
+
+/**
+ * The recommended number of points for a minimum tappable area.
+ *
+ * Value: 44
+ */
+CGFloat NIMinimumTapDimension(void);
 
 /**
  * Fetch the height of a toolbar in a given orientation.
@@ -144,6 +165,10 @@ NSTimeInterval NIDeviceRotationDuration(BOOL isFlippingUpsideDown);
  * Value: 10 pixels on all sides.
  */
 UIEdgeInsets NICellContentPadding(void);
+
+#if defined __cplusplus
+};
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /**@}*/// End of Common Metrics ///////////////////////////////////////////////////////////////////

@@ -18,18 +18,21 @@
 
 #import "NimbusCore.h"
 
+#if !defined(__has_feature) || !__has_feature(objc_arc)
+#error "Nimbus requires ARC support."
+#endif
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < NIIOS_6_0
+const UIImageResizingMode UIImageResizingModeStretch = -1;
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 BOOL NIIsPad(void) {
-#ifdef UI_USER_INTERFACE_IDIOM
   static NSInteger isPad = -1;
   if (isPad < 0) {
-    isPad = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+    isPad = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) ? 1 : 0;
   }
   return isPad > 0;
-#else
-  return NO;
-#endif
 }
 
 
@@ -53,6 +56,12 @@ CGFloat NIScreenScale(void) {
   } else {
     return 1;
   }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+BOOL NIIsRetina(void) {
+  return NIScreenScale() == 2.f;
 }
 
 

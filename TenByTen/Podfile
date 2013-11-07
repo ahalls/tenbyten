@@ -1,7 +1,10 @@
-platform :ios
-pod 'AFNetworking'
+platform :ios, '7.0'
+pod 'AFNetworking', '1.3'
 pod 'AFHTTPRequestOperationLogger'
 pod 'MBProgressHUD'
 pod 'TestFlightSDK'
 pod 'Nimbus/PagingScrollView'
+target :TenByTenTests, :exclusive => true do
+   pod 'Kiwi'
+end
 

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F1F88BFD16029BBB005C375F"
-               BuildableName = "TenByTen.app"
+               BuildableName = "10x10.app"
                BlueprintName = "TenByTen"
                ReferencedContainer = "container:TenByTen.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1F88BFD16029BBB005C375F"
-            BuildableName = "TenByTen.app"
+            BuildableName = "10x10.app"
             BlueprintName = "TenByTen"
             ReferencedContainer = "container:TenByTen.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1F88BFD16029BBB005C375F"
-            BuildableName = "TenByTen.app"
+            BuildableName = "10x10.app"
             BlueprintName = "TenByTen"
             ReferencedContainer = "container:TenByTen.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1F88BFD16029BBB005C375F"
-            BuildableName = "TenByTen.app"
+            BuildableName = "10x10.app"
             BlueprintName = "TenByTen"
             ReferencedContainer = "container:TenByTen.xcodeproj">
          </BuildableReference>

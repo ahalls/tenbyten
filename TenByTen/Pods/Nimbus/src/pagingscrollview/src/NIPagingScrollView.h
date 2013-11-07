@@ -1,5 +1,6 @@
 //
-// Copyright 2011 Jeff Verkoeyen
+// Copyright 2011-2012 Jeff Verkoeyen
+// Copyright 2012 Manu Cornet (vertical layouts)
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,7 +30,12 @@ extern const NSInteger NIPagingScrollViewUnknownNumberOfPages;
  *
  * Value: 10
  */
-extern const CGFloat NIPagingScrollViewDefaultPageHorizontalMargin;
+extern const CGFloat NIPagingScrollViewDefaultPageMargin;
+
+typedef enum {
+  NIPagingScrollViewHorizontal = 0,
+  NIPagingScrollViewVertical,
+} NIPagingScrollViewType;
 
 @protocol NIPagingScrollViewDataSource;
 @protocol NIPagingScrollViewDelegate;
@@ -41,51 +47,28 @@ extern const CGFloat NIPagingScrollViewDefaultPageHorizontalMargin;
  *
  *      @ingroup NimbusPagingScrollView
  */
-@interface NIPagingScrollView : UIView <UIScrollViewDelegate> {
-@private
-  // Views
-  UIScrollView* _pagingScrollView;
-
-  // Pages
-  NSMutableSet* _visiblePages;
-  NIViewRecycler* _viewRecycler;
-
-  // Configurable Properties
-  CGFloat _pageHorizontalMargin;
-
-  // State Information
-  NSInteger _firstVisiblePageIndexBeforeRotation;
-  CGFloat _percentScrolledIntoFirstVisiblePage;
-  BOOL _isModifyingContentOffset;
-  BOOL _isAnimatingToPage;
-  NSInteger _centerPageIndex;
-
-  // Cached Data Source Information
-  NSInteger _numberOfPages;
-
-  id<NIPagingScrollViewDataSource> _dataSource;
-  id<NIPagingScrollViewDelegate> _delegate;
-}
+@interface NIPagingScrollView : UIView <UIScrollViewDelegate>
 
 #pragma mark Data Source
 
 - (void)reloadData;
-@property (nonatomic, readwrite, assign) id<NIPagingScrollViewDataSource> dataSource;
-@property (nonatomic, readwrite, assign) id<NIPagingScrollViewDelegate> delegate;
+@property (nonatomic, NI_WEAK) id<NIPagingScrollViewDataSource> dataSource;
+@property (nonatomic, NI_WEAK) id<NIPagingScrollViewDelegate> delegate;
 
 // It is highly recommended that you use this method to manage view recycling.
 - (UIView<NIPagingScrollViewPage> *)dequeueReusablePageWithIdentifier:(NSString *)identifier;
 
 #pragma mark State
 
-@property (nonatomic, readwrite, assign) NSInteger centerPageIndex; // Use moveToPageAtIndex:animated: to animate to a given page.
-- (void)setCenterPageIndex:(NSInteger)centerPageIndex animated:(BOOL)animated __NI_DEPRECATED_METHOD;
+- (UIView<NIPagingScrollViewPage> *)centerPageView;
+@property (nonatomic, assign) NSInteger centerPageIndex; // Use moveToPageAtIndex:animated: to animate to a given page.
 
 @property (nonatomic, readonly, assign) NSInteger numberOfPages;
 
 #pragma mark Configuring Presentation
 
-@property (nonatomic, readwrite, assign) CGFloat pageHorizontalMargin;
+@property (nonatomic, assign) CGFloat pageMargin;
+@property (nonatomic, assign) NIPagingScrollViewType type; // Default: NIPagingScrollViewHorizontal
 
 #pragma mark Changing the Visible Page
 
@@ -93,7 +76,7 @@ extern const CGFloat NIPagingScrollViewDefaultPageHorizontalMargin;
 - (BOOL)hasPrevious;
 - (void)moveToNextAnimated:(BOOL)animated;
 - (void)moveToPreviousAnimated:(BOOL)animated;
-- (void)moveToPageAtIndex:(NSInteger)pageIndex animated:(BOOL)animated;
+- (BOOL)moveToPageAtIndex:(NSInteger)pageIndex animated:(BOOL)animated;
 
 #pragma mark Rotating the Scroll View
 
@@ -102,11 +85,8 @@ extern const CGFloat NIPagingScrollViewDefaultPageHorizontalMargin;
 
 #pragma mark Subclassing
 
-@property (nonatomic, readonly, retain) UIScrollView* pagingScrollView;
-@property (nonatomic, readonly, copy) NSMutableSet* visiblePages;
-
-- (void)willDisplayPage:(UIView<NIPagingScrollViewPage> *)pageView;
-- (void)didRecyclePage:(UIView<NIPagingScrollViewPage> *)pageView;
+@property (nonatomic, readonly, NI_STRONG) UIScrollView* pagingScrollView;
+@property (nonatomic, readonly, copy) NSMutableSet* visiblePages; // Set of UIView<NIPagingScrollViewPage>*
 
 @end
 
@@ -159,13 +139,32 @@ extern const CGFloat NIPagingScrollViewDefaultPageHorizontalMargin;
  *
  * The space between each page will be 2x this value.
  *
- * By default this is NIPagingScrollViewDefaultPageHorizontalMargin.
+ * By default this is NIPagingScrollViewDefaultPageMargin.
  *
- *      @fn NIPagingScrollView::pageHorizontalMargin
+ *      @fn NIPagingScrollView::pageMargin
+ */
+
+/**
+ * The type of paging scroll view to display.
+ *
+ * This property allows you to configure whether you want a horizontal or vertical paging scroll
+ * view. You should set this property before you present the scroll view and not modify it after.
+ *
+ * By default this is NIPagingScrollViewHorizontal.
+ *
+ *      @fn NIPagingScrollView::type
  */
 
 
 /** @name State */
+
+/**
+ * The current center page view.
+ *
+ * If no pages exist then this will return nil.
+ *
+ *      @fn NIPagingScrollView::centerPageView
+ */
 
 /**
  * The current center page index.
@@ -228,6 +227,8 @@ extern const CGFloat NIPagingScrollViewDefaultPageHorizontalMargin;
 /**
  * Move to the given page index with optional animation.
  *
+ *      @returns NO if a page change animation is already in effect and we couldn't change the page
+ *               again.
  *      @fn NIPagingScrollView::moveToPageAtIndex:animated:
  */
 
@@ -266,20 +267,4 @@ extern const CGFloat NIPagingScrollViewDefaultPageHorizontalMargin;
  * Meant to be used by subclasses only.
  *
  *      @fn NIPagingScrollView::visiblePages
- */
-
-/**
- * Called before the page is about to be shown and after its frame has been set.
- *
- * Meant to be subclassed. By default this method does nothing.
- *
- *      @fn NIPagingScrollView::willDisplayPage:
- */
-
-/**
- * Called immediately after the page is removed from the paging scroll view.
- *
- * Meant to be subclassed. By default this method does nothing.
- *
- *      @fn NIPagingScrollView::didRecyclePage:
  */

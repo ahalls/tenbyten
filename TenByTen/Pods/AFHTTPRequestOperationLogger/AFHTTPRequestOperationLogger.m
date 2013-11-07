@@ -1,6 +1,6 @@
 // AFHTTPRequestLogger.h
 //
-// Copyright (c) 2011 Mattt Thompson (http://mattt.me)
+// Copyright (c) 2011 AFNetworking (http://afnetworking.com/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,18 +23,19 @@
 #import "AFHTTPRequestOperationLogger.h"
 #import "AFHTTPRequestOperation.h"
 
+#import <objc/runtime.h>
+
 @implementation AFHTTPRequestOperationLogger
-@synthesize level = _level;
 
-+ (AFHTTPRequestOperationLogger *)sharedLogger {
++ (instancetype)sharedLogger {
     static AFHTTPRequestOperationLogger *_sharedLogger = nil;
-
+    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedLogger = [[self alloc] init];
     });
-
-  return _sharedLogger;
+    
+    return _sharedLogger;
 }
 
 - (id)init {
@@ -42,77 +43,91 @@
     if (!self) {
         return nil;
     }
-
+    
     self.level = AFLoggerLevelInfo;
-
+    
     return self;
 }
 
 - (void)dealloc {
-  [self stopLogging];
-
-  [super dealloc];
+    [self stopLogging];
 }
 
 - (void)startLogging {
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HTTPOperationDidStart:) name:AFNetworkingOperationDidStartNotification object:nil];
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HTTPOperationDidFinish:) name:AFNetworkingOperationDidFinishNotification object:nil];
+    [self stopLogging];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HTTPOperationDidStart:) name:AFNetworkingOperationDidStartNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HTTPOperationDidFinish:) name:AFNetworkingOperationDidFinishNotification object:nil];
 }
 
 - (void)stopLogging {
-  [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - NSNotification
 
-- (void)HTTPOperationDidStart:(NSNotification *)notification {
-  AFHTTPRequestOperation *operation = (AFHTTPRequestOperation *)[notification object];
+static void * AFHTTPRequestOperationStartDate = &AFHTTPRequestOperationStartDate;
 
+- (void)HTTPOperationDidStart:(NSNotification *)notification {
+    AFHTTPRequestOperation *operation = (AFHTTPRequestOperation *)[notification object];
+    
     if (![operation isKindOfClass:[AFHTTPRequestOperation class]]) {
         return;
     }
-
-  NSString *body = nil;
-  if ([operation.request HTTPBody]) {
-    body = [NSString stringWithUTF8String:[[operation.request HTTPBody] bytes]];
-  }
-
-  switch (self.level) {
-    case AFLoggerLevelDebug:
-      NSLog(@"%@ '%@': %@ %@", [operation.request HTTPMethod], [[operation.request URL] absoluteString], [operation.request allHTTPHeaderFields], body);
-      break;
-    case AFLoggerLevelInfo:
-      NSLog(@"%@ '%@'", [operation.request HTTPMethod], [[operation.request URL] absoluteString]);
-      break;
+    
+    objc_setAssociatedObject(operation, AFHTTPRequestOperationStartDate, [NSDate date], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    if (self.filterPredicate && [self.filterPredicate evaluateWithObject:operation]) {
+        return;
+    }
+    
+    NSString *body = nil;
+    if ([operation.request HTTPBody]) {
+        body = [[NSString alloc] initWithData:[operation.request HTTPBody] encoding:NSUTF8StringEncoding];
+    }
+    
+    switch (self.level) {
+        case AFLoggerLevelDebug:
+            NSLog(@"%@ '%@': %@ %@", [operation.request HTTPMethod], [[operation.request URL] absoluteString], [operation.request allHTTPHeaderFields], body);
+            break;
+        case AFLoggerLevelInfo:
+            NSLog(@"%@ '%@'", [operation.request HTTPMethod], [[operation.request URL] absoluteString]);
+            break;
         default:
             break;
-  }
+    }
 }
 
 - (void)HTTPOperationDidFinish:(NSNotification *)notification {
-  AFHTTPRequestOperation *operation = (AFHTTPRequestOperation *)[notification object];
-
+    AFHTTPRequestOperation *operation = (AFHTTPRequestOperation *)[notification object];
+    
     if (![operation isKindOfClass:[AFHTTPRequestOperation class]]) {
         return;
     }
-
+    
+    if (self.filterPredicate && [self.filterPredicate evaluateWithObject:operation]) {
+        return;
+    }
+    
+    NSTimeInterval elapsedTime = [[NSDate date] timeIntervalSinceDate:objc_getAssociatedObject(operation, AFHTTPRequestOperationStartDate)];
+    
     if (operation.error) {
         switch (self.level) {
             case AFLoggerLevelDebug:
             case AFLoggerLevelInfo:
             case AFLoggerLevelWarn:
             case AFLoggerLevelError:
-                NSLog(@"[Error] %@ '%@' (%ld): %@", [operation.request HTTPMethod], [[operation.response URL] absoluteString], (long)[operation.response statusCode], operation.error);
+                NSLog(@"[Error] %@ '%@' (%ld) [%.04f s]: %@", [operation.request HTTPMethod], [[operation.response URL] absoluteString], (long)[operation.response statusCode], elapsedTime, operation.error);
             default:
                 break;
         }
     } else {
         switch (self.level) {
             case AFLoggerLevelDebug:
-                NSLog(@"%ld '%@': %@", (long)[operation.response statusCode], [[operation.response URL] absoluteString], operation.responseString);
+                NSLog(@"%ld '%@' [%.04f s]: %@ %@", (long)[operation.response statusCode], [[operation.response URL] absoluteString], elapsedTime, [operation.response allHeaderFields], operation.responseString);
                 break;
             case AFLoggerLevelInfo:
-                NSLog(@"%ld '%@'", (long)[operation.response statusCode], [[operation.response URL] absoluteString]);
+                NSLog(@"%ld '%@' [%.04f s]", (long)[operation.response statusCode], [[operation.response URL] absoluteString], elapsedTime);
                 break;
             default:
                 break;
