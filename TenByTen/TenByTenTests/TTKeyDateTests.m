@@ -23,20 +23,23 @@
 //  THE SOFTWARE.
 //
 
-#import "TTKeyDateTests.h"
+
+#import "Kiwi.h"
+
 #import "TTKeyDate.h"
 
-@implementation TTKeyDateTests
+SPEC_BEGIN(TTKeyDateTests)
 
-- (void)testSetting
-{
-    TTKeyDate * date = [[TTKeyDate alloc]init];
-                        
-    [date setWithString:@"2012 09 06 17 Thu"];
-    
-    STAssertTrue([[date path] isEqualToString: @"2012/09/06/17/"], @"string in path out");
-    
-}
+describe(@"Date Setup", ^{
+    it(@"setWithString", ^{
+        TTKeyDate * date = [[TTKeyDate alloc]init];
+        [date setWithString:@"2012 09 06 17 Thu"];
+        [[[date path] should ] equal: @"2012/09/06/17/"];
+        
 
 
-@end
+    });
+});
+
+SPEC_END
+
