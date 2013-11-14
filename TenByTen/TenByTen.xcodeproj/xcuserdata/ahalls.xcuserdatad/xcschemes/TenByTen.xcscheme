@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F1F88C2116029BBC005C375F"
-               BuildableName = "TenByTenTests.octest"
+               BlueprintIdentifier = "F1F651371835357D00EBB199"
+               BuildableName = "TenByTenTests.xctest"
                BlueprintName = "TenByTenTests"
                ReferencedContainer = "container:TenByTen.xcodeproj">
             </BuildableReference>
