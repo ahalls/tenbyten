@@ -29,7 +29,7 @@
 
 @interface TTDataManager ()
 
-@property (nonatomic, strong) TTTenXTenApiClient * apiClient;
+
 
 @end
 

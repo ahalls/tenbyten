@@ -29,6 +29,8 @@
 
 #import "AFNetworking.h"
 
+@class TTTenXTenApiClient;
+
 /**
  The 'TTDataManager' class provides management of the application data model.  Providing reference to in memory data structures. Manages the connection with the data source, the 10x10 server.
  */
@@ -81,5 +83,10 @@
  @return 'NSURLRequest' used by the ApiClient to request data
  */
 -(NSURLRequest *) requestFullImageWithWord: (TTKeyWord *) keyWord;
+
+/**
+ Set to an instance of TTTenXTenApiClinent Defauult.  Made public to allow for testing by injecting mocks. 
+ */
+@property (nonatomic, strong) TTTenXTenApiClient * apiClient;
 
 @end
