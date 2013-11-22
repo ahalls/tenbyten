@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "37B8BB6E3A9248FCA18558D4"
+               BlueprintIdentifier = "33539876E470482885DA6803"
                BuildableName = "libPods-AFHTTPRequestOperationLogger.a"
                BlueprintName = "Pods-AFHTTPRequestOperationLogger"
                ReferencedContainer = "container:Pods.xcodeproj">

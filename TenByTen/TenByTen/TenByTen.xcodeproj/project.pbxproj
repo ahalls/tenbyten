@@ -47,9 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B322CB72B6447C19C0B8195 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		4B322CB72B6447C19C0B8195 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		6A7A614398184399A04C6FAB /* libPods-TenByTenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TenByTenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AB50BDEFE0A4C3C8D8E5022 /* Pods-TenByTenTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenByTenTests.xcconfig"; path = "Pods/Pods-TenByTenTests.xcconfig"; sourceTree = "<group>"; };
+		7AB50BDEFE0A4C3C8D8E5022 /* Pods-TenByTenTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenByTenTests.xcconfig"; path = "../Pods/Pods-TenByTenTests.xcconfig"; sourceTree = "<group>"; };
 		9794DE4B3D3542E49C2EF575 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1024EF318353A04001D6ED2 /* TTDataManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDataManagerTests.m; sourceTree = "<group>"; };
 		F1432333183533DA00F56C44 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -364,7 +364,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-TenByTenTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Pods-TenByTenTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		74E43CE3CBFB434180A8AD13 /* Copy Pods Resources */ = {
@@ -379,7 +379,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Pods-resources.sh\"\n";
 		};
 		EBC97C26311E47F885E706E3 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
