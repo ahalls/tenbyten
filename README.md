@@ -8,6 +8,14 @@ I've written this project for two purposes.  1) To showcase a basic application 
 Currently the app is just getting off the ground with very basic functionality on 
 the iPhone.
 
+Update
+------
+I'm going to re-work this example usint the following techniologies
+- Swift
+- ReactiveCocoa
+- AFNetworking 2.0
+- MVVM Pattern 
+
 Implementation
 --------------
 This project uses the (http://cocoapods.org/) Cocoapods library management system to bring in third party software into the project.
