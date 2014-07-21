@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C321F524DC3945EC8D7705DB"
+               BlueprintIdentifier = "678C54E6C01B4325A43892C0"
                BuildableName = "libPods-TenByTenTests-Kiwi.a"
                BlueprintName = "Pods-TenByTenTests-Kiwi"
                ReferencedContainer = "container:Pods.xcodeproj">

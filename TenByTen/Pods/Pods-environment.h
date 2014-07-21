@@ -6,39 +6,81 @@
 // project.
 
 
-// AFHTTPRequestOperationLogger
-#define COCOAPODS_POD_AVAILABLE_AFHTTPRequestOperationLogger
-#define COCOAPODS_VERSION_MAJOR_AFHTTPRequestOperationLogger 1
-#define COCOAPODS_VERSION_MINOR_AFHTTPRequestOperationLogger 0
-#define COCOAPODS_VERSION_PATCH_AFHTTPRequestOperationLogger 0
-
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
-#define COCOAPODS_VERSION_MAJOR_AFNetworking 1
+#define COCOAPODS_VERSION_MAJOR_AFNetworking 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
-#define COCOAPODS_VERSION_PATCH_AFNetworking 0
+#define COCOAPODS_VERSION_PATCH_AFNetworking 1
 
-// MBProgressHUD
-#define COCOAPODS_POD_AVAILABLE_MBProgressHUD
-#define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
-#define COCOAPODS_VERSION_MINOR_MBProgressHUD 8
-#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
+// AFNetworking/NSURLConnection
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_NSURLConnection
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_NSURLConnection 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_NSURLConnection 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_NSURLConnection 1
 
-// Nimbus/Core
-#define COCOAPODS_POD_AVAILABLE_Nimbus_Core
-#define COCOAPODS_VERSION_MAJOR_Nimbus_Core 1
-#define COCOAPODS_VERSION_MINOR_Nimbus_Core 0
-#define COCOAPODS_VERSION_PATCH_Nimbus_Core 0
+// AFNetworking/NSURLSession
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_NSURLSession
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_NSURLSession 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_NSURLSession 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_NSURLSession 1
 
-// Nimbus/PagingScrollView
-#define COCOAPODS_POD_AVAILABLE_Nimbus_PagingScrollView
-#define COCOAPODS_VERSION_MAJOR_Nimbus_PagingScrollView 1
-#define COCOAPODS_VERSION_MINOR_Nimbus_PagingScrollView 0
-#define COCOAPODS_VERSION_PATCH_Nimbus_PagingScrollView 0
+// AFNetworking/Reachability
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_Reachability
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_Reachability 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_Reachability 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Reachability 1
 
-// TestFlightSDK
-#define COCOAPODS_POD_AVAILABLE_TestFlightSDK
-#define COCOAPODS_VERSION_MAJOR_TestFlightSDK 2
-#define COCOAPODS_VERSION_MINOR_TestFlightSDK 1
-#define COCOAPODS_VERSION_PATCH_TestFlightSDK 1
+// AFNetworking/Security
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_Security
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_Security 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_Security 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Security 1
+
+// AFNetworking/Serialization
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_Serialization
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_Serialization 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_Serialization 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Serialization 1
+
+// AFNetworking/UIKit
+#define COCOAPODS_POD_AVAILABLE_AFNetworking_UIKit
+#define COCOAPODS_VERSION_MAJOR_AFNetworking_UIKit 2
+#define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
+
+// AFNetworking2-RACExtensions
+#define COCOAPODS_POD_AVAILABLE_AFNetworking2_RACExtensions
+#define COCOAPODS_VERSION_MAJOR_AFNetworking2_RACExtensions 0
+#define COCOAPODS_VERSION_MINOR_AFNetworking2_RACExtensions 0
+#define COCOAPODS_VERSION_PATCH_AFNetworking2_RACExtensions 1
+
+// MMProgressHUD
+#define COCOAPODS_POD_AVAILABLE_MMProgressHUD
+#define COCOAPODS_VERSION_MAJOR_MMProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_MMProgressHUD 2
+#define COCOAPODS_VERSION_PATCH_MMProgressHUD 2
+
+// ReactiveCocoa
+#define COCOAPODS_POD_AVAILABLE_ReactiveCocoa
+#define COCOAPODS_VERSION_MAJOR_ReactiveCocoa 2
+#define COCOAPODS_VERSION_MINOR_ReactiveCocoa 3
+#define COCOAPODS_VERSION_PATCH_ReactiveCocoa 1
+
+// ReactiveCocoa/Core
+#define COCOAPODS_POD_AVAILABLE_ReactiveCocoa_Core
+#define COCOAPODS_VERSION_MAJOR_ReactiveCocoa_Core 2
+#define COCOAPODS_VERSION_MINOR_ReactiveCocoa_Core 3
+#define COCOAPODS_VERSION_PATCH_ReactiveCocoa_Core 1
+
+// ReactiveCocoa/UI
+#define COCOAPODS_POD_AVAILABLE_ReactiveCocoa_UI
+#define COCOAPODS_VERSION_MAJOR_ReactiveCocoa_UI 2
+#define COCOAPODS_VERSION_MINOR_ReactiveCocoa_UI 3
+#define COCOAPODS_VERSION_PATCH_ReactiveCocoa_UI 1
+
+// ReactiveCocoa/no-arc
+#define COCOAPODS_POD_AVAILABLE_ReactiveCocoa_no_arc
+#define COCOAPODS_VERSION_MAJOR_ReactiveCocoa_no_arc 2
+#define COCOAPODS_VERSION_MINOR_ReactiveCocoa_no_arc 3
+#define COCOAPODS_VERSION_PATCH_ReactiveCocoa_no_arc 1
 

@@ -10,7 +10,7 @@ the iPhone.
 
 Update
 ------
-I'm going to re-work this example usint the following techniologies
+I'm going to re-work this example using the following techniologies:
 - Swift
 - ReactiveCocoa
 - AFNetworking 2.0

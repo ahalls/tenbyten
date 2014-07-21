@@ -1,11 +1,10 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 xcodeproj 'TenByTen/TenByTen.xcodeproj'
-pod 'AFNetworking', '1.3'
-pod 'AFHTTPRequestOperationLogger'
-pod 'MBProgressHUD'
-pod 'TestFlightSDK'
-pod 'Nimbus/PagingScrollView'
+pod 'AFNetworking'
+pod 'AFNetworking2-RACExtensions'
+pod 'ReactiveCocoa'
+pod 'MMProgressHUD'
 target :TenByTenTests, :exclusive => true do
-   pod 'Kiwi/XCTest'
+   pod 'Kiwi'
 end
 
