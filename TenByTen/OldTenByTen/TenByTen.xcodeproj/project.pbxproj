@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94D00EBC53BD4FA2A49D37CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9794DE4B3D3542E49C2EF575 /* libPods.a */; };
+		A3E5EF79D1E64FE587111732 /* libPods-TenByTenTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7A614398184399A04C6FAB /* libPods-TenByTenTests.a */; };
+		F1024EF418353A04001D6ED2 /* TTDataManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1024EF318353A04001D6ED2 /* TTDataManagerTests.m */; };
+		F1897E3116033D6400963B5F /* TTHourViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1897E3016033D6400963B5F /* TTHourViewCell.m */; };
+		F1897E341603442400963B5F /* TTImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1897E331603442400963B5F /* TTImageView.m */; };
+		F1897E37160345AE00963B5F /* BlankImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F1897E36160345AE00963B5F /* BlankImage.png */; };
+		F1897E391606AB9300963B5F /* BlankImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1897E381606AB9300963B5F /* BlankImage@2x.png */; };
+		F1897E5F1606D80C00963B5F /* TTWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1897E5E1606D80C00963B5F /* TTWordViewController.m */; };
+		F1897E631606E34200963B5F /* TTWordImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1897E621606E34200963B5F /* TTWordImageView.m */; };
+		F197AAAA1602AFBF00C6EFB9 /* TTDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F197AAA91602AFBF00C6EFB9 /* TTDataManager.m */; };
+		F197AAAD1602B0B200C6EFB9 /* TTTenXTenApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F197AAAC1602B0B200C6EFB9 /* TTTenXTenApiClient.m */; };
+		F197AAB01602B26C00C6EFB9 /* TTKeyDate.m in Sources */ = {isa = PBXBuildFile; fileRef = F197AAAF1602B26C00C6EFB9 /* TTKeyDate.m */; };
+		F197AABA1602CF0D00C6EFB9 /* TTHourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F197AAB91602CF0D00C6EFB9 /* TTHourViewController.m */; };
+		F197AABD1603145C00C6EFB9 /* TTKeyWord.m in Sources */ = {isa = PBXBuildFile; fileRef = F197AABC1603145C00C6EFB9 /* TTKeyWord.m */; };
+		F1F651391835357D00EBB199 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1432333183533DA00F56C44 /* XCTest.framework */; };
+		F1F6513A1835357D00EBB199 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F88C0416029BBB005C375F /* Foundation.framework */; };
+		F1F6513B1835357D00EBB199 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F88C0216029BBB005C375F /* UIKit.framework */; };
+		F1F651411835357D00EBB199 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1F6513F1835357D00EBB199 /* InfoPlist.strings */; };
+		F1F6514B183535A700EBB199 /* TTKeyDateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F6514A183535A700EBB199 /* TTKeyDateTests.m */; };
+		F1F88C0316029BBB005C375F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F88C0216029BBB005C375F /* UIKit.framework */; };
+		F1F88C0516029BBB005C375F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F88C0416029BBB005C375F /* Foundation.framework */; };
+		F1F88C0716029BBB005C375F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F88C0616029BBB005C375F /* CoreGraphics.framework */; };
+		F1F88C0D16029BBB005C375F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1F88C0B16029BBB005C375F /* InfoPlist.strings */; };
+		F1F88C0F16029BBB005C375F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F88C0E16029BBB005C375F /* main.m */; };
+		F1F88C1316029BBB005C375F /* TTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F88C1216029BBB005C375F /* TTAppDelegate.m */; };
+		F1F88C1616029BBB005C375F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F88C1416029BBB005C375F /* MainStoryboard_iPhone.storyboard */; };
+		F1F88C1916029BBB005C375F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1F88C1716029BBB005C375F /* MainStoryboard_iPad.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1F651451835357D00EBB199 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1F88BF516029BBB005C375F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1F88BFD16029BBB005C375F;
+			remoteInfo = TenByTen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4B322CB72B6447C19C0B8195 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		6A7A614398184399A04C6FAB /* libPods-TenByTenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TenByTenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB50BDEFE0A4C3C8D8E5022 /* Pods-TenByTenTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenByTenTests.xcconfig"; path = "../Pods/Pods-TenByTenTests.xcconfig"; sourceTree = "<group>"; };
+		9794DE4B3D3542E49C2EF575 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1024EF318353A04001D6ED2 /* TTDataManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDataManagerTests.m; sourceTree = "<group>"; };
+		F1432333183533DA00F56C44 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F1897E2F16033D6400963B5F /* TTHourViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHourViewCell.h; sourceTree = "<group>"; };
+		F1897E3016033D6400963B5F /* TTHourViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHourViewCell.m; sourceTree = "<group>"; };
+		F1897E321603442400963B5F /* TTImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTImageView.h; sourceTree = "<group>"; };
+		F1897E331603442400963B5F /* TTImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTImageView.m; sourceTree = "<group>"; };
+		F1897E36160345AE00963B5F /* BlankImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankImage.png; sourceTree = "<group>"; };
+		F1897E381606AB9300963B5F /* BlankImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlankImage@2x.png"; sourceTree = "<group>"; };
+		F1897E5D1606D80C00963B5F /* TTWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTWordViewController.h; sourceTree = "<group>"; };
+		F1897E5E1606D80C00963B5F /* TTWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTWordViewController.m; sourceTree = "<group>"; };
+		F1897E611606E34200963B5F /* TTWordImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTWordImageView.h; sourceTree = "<group>"; };
+		F1897E621606E34200963B5F /* TTWordImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTWordImageView.m; sourceTree = "<group>"; };
+		F197AAA81602AFBF00C6EFB9 /* TTDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTDataManager.h; sourceTree = "<group>"; };
+		F197AAA91602AFBF00C6EFB9 /* TTDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDataManager.m; sourceTree = "<group>"; };
+		F197AAAB1602B0B200C6EFB9 /* TTTenXTenApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTenXTenApiClient.h; sourceTree = "<group>"; };
+		F197AAAC1602B0B200C6EFB9 /* TTTenXTenApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTenXTenApiClient.m; sourceTree = "<group>"; };
+		F197AAAE1602B26C00C6EFB9 /* TTKeyDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKeyDate.h; sourceTree = "<group>"; };
+		F197AAAF1602B26C00C6EFB9 /* TTKeyDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKeyDate.m; sourceTree = "<group>"; };
+		F197AAB41602CD9500C6EFB9 /* TTNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTNotifications.h; sourceTree = "<group>"; };
+		F197AAB81602CF0D00C6EFB9 /* TTHourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHourViewController.h; sourceTree = "<group>"; };
+		F197AAB91602CF0D00C6EFB9 /* TTHourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTHourViewController.m; sourceTree = "<group>"; };
+		F197AABB1603145C00C6EFB9 /* TTKeyWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTKeyWord.h; sourceTree = "<group>"; };
+		F197AABC1603145C00C6EFB9 /* TTKeyWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKeyWord.m; sourceTree = "<group>"; };
+		F1F651381835357D00EBB199 /* TenByTenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenByTenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1F6513E1835357D00EBB199 /* TenByTenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TenByTenTests-Info.plist"; sourceTree = "<group>"; };
+		F1F651401835357D00EBB199 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F1F651441835357D00EBB199 /* TenByTenTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TenByTenTests-Prefix.pch"; sourceTree = "<group>"; };
+		F1F6514A183535A700EBB199 /* TTKeyDateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTKeyDateTests.m; sourceTree = "<group>"; };
+		F1F88BFE16029BBB005C375F /* 10x10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 10x10.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1F88C0216029BBB005C375F /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F1F88C0416029BBB005C375F /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F1F88C0616029BBB005C375F /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F1F88C0A16029BBB005C375F /* TenByTen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TenByTen-Info.plist"; sourceTree = "<group>"; };
+		F1F88C0C16029BBB005C375F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F1F88C0E16029BBB005C375F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F1F88C1016029BBB005C375F /* TenByTen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TenByTen-Prefix.pch"; sourceTree = "<group>"; };
+		F1F88C1116029BBB005C375F /* TTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAppDelegate.h; sourceTree = "<group>"; };
+		F1F88C1216029BBB005C375F /* TTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
+		F1F88C1516029BBB005C375F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		F1F88C1816029BBB005C375F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		F1F88C2316029BBC005C375F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1F651351835357D00EBB199 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1F651391835357D00EBB199 /* XCTest.framework in Frameworks */,
+				F1F6513B1835357D00EBB199 /* UIKit.framework in Frameworks */,
+				F1F6513A1835357D00EBB199 /* Foundation.framework in Frameworks */,
+				A3E5EF79D1E64FE587111732 /* libPods-TenByTenTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1F88BFB16029BBB005C375F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1F88C0316029BBB005C375F /* UIKit.framework in Frameworks */,
+				F1F88C0516029BBB005C375F /* Foundation.framework in Frameworks */,
+				F1F88C0716029BBB005C375F /* CoreGraphics.framework in Frameworks */,
+				94D00EBC53BD4FA2A49D37CB /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1897E2E1603301A00963B5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1897E2F16033D6400963B5F /* TTHourViewCell.h */,
+				F1897E3016033D6400963B5F /* TTHourViewCell.m */,
+				F1897E321603442400963B5F /* TTImageView.h */,
+				F1897E331603442400963B5F /* TTImageView.m */,
+				F1897E611606E34200963B5F /* TTWordImageView.h */,
+				F1897E621606E34200963B5F /* TTWordImageView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1897E35160345AE00963B5F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1897E381606AB9300963B5F /* BlankImage@2x.png */,
+				F1897E36160345AE00963B5F /* BlankImage.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F197AAA51602AF5500C6EFB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F197AAA81602AFBF00C6EFB9 /* TTDataManager.h */,
+				F197AAA91602AFBF00C6EFB9 /* TTDataManager.m */,
+				F197AAAE1602B26C00C6EFB9 /* TTKeyDate.h */,
+				F197AAAF1602B26C00C6EFB9 /* TTKeyDate.m */,
+				F197AAAB1602B0B200C6EFB9 /* TTTenXTenApiClient.h */,
+				F197AAAC1602B0B200C6EFB9 /* TTTenXTenApiClient.m */,
+				F197AABB1603145C00C6EFB9 /* TTKeyWord.h */,
+				F197AABC1603145C00C6EFB9 /* TTKeyWord.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F197AAA71602AF6A00C6EFB9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F197AAB81602CF0D00C6EFB9 /* TTHourViewController.h */,
+				F197AAB91602CF0D00C6EFB9 /* TTHourViewController.m */,
+				F1897E5D1606D80C00963B5F /* TTWordViewController.h */,
+				F1897E5E1606D80C00963B5F /* TTWordViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F1F6513C1835357D00EBB199 /* TenByTenTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1F6514A183535A700EBB199 /* TTKeyDateTests.m */,
+				F1024EF318353A04001D6ED2 /* TTDataManagerTests.m */,
+				F1F6513D1835357D00EBB199 /* Supporting Files */,
+			);
+			path = TenByTenTests;
+			sourceTree = "<group>";
+		};
+		F1F6513D1835357D00EBB199 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1F6513E1835357D00EBB199 /* TenByTenTests-Info.plist */,
+				F1F6513F1835357D00EBB199 /* InfoPlist.strings */,
+				F1F651441835357D00EBB199 /* TenByTenTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1F88BF316029BBB005C375F = {
+			isa = PBXGroup;
+			children = (
+				F1F88C0816029BBB005C375F /* TenByTen */,
+				F1F6513C1835357D00EBB199 /* TenByTenTests */,
+				F1F88C0116029BBB005C375F /* Frameworks */,
+				F1F88BFF16029BBB005C375F /* Products */,
+				4B322CB72B6447C19C0B8195 /* Pods.xcconfig */,
+				7AB50BDEFE0A4C3C8D8E5022 /* Pods-TenByTenTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		F1F88BFF16029BBB005C375F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1F88BFE16029BBB005C375F /* 10x10.app */,
+				F1F651381835357D00EBB199 /* TenByTenTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1F88C0116029BBB005C375F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1F88C0216029BBB005C375F /* UIKit.framework */,
+				F1F88C0416029BBB005C375F /* Foundation.framework */,
+				F1F88C0616029BBB005C375F /* CoreGraphics.framework */,
+				F1F88C2316029BBC005C375F /* SenTestingKit.framework */,
+				9794DE4B3D3542E49C2EF575 /* libPods.a */,
+				6A7A614398184399A04C6FAB /* libPods-TenByTenTests.a */,
+				F1432333183533DA00F56C44 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1F88C0816029BBB005C375F /* TenByTen */ = {
+			isa = PBXGroup;
+			children = (
+				F1F88C1716029BBB005C375F /* MainStoryboard_iPad.storyboard */,
+				F1F88C1416029BBB005C375F /* MainStoryboard_iPhone.storyboard */,
+				F197AAA51602AF5500C6EFB9 /* Model */,
+				F1897E35160345AE00963B5F /* Resources */,
+				F1F88C0916029BBB005C375F /* Supporting Files */,
+				F1F88C1116029BBB005C375F /* TTAppDelegate.h */,
+				F1F88C1216029BBB005C375F /* TTAppDelegate.m */,
+				F197AAB41602CD9500C6EFB9 /* TTNotifications.h */,
+				F197AAA71602AF6A00C6EFB9 /* ViewControllers */,
+				F1897E2E1603301A00963B5F /* Views */,
+			);
+			path = TenByTen;
+			sourceTree = "<group>";
+		};
+		F1F88C0916029BBB005C375F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1F88C0A16029BBB005C375F /* TenByTen-Info.plist */,
+				F1F88C0B16029BBB005C375F /* InfoPlist.strings */,
+				F1F88C0E16029BBB005C375F /* main.m */,
+				F1F88C1016029BBB005C375F /* TenByTen-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1F651371835357D00EBB199 /* TenByTenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1F651471835357D00EBB199 /* Build configuration list for PBXNativeTarget "TenByTenTests" */;
+			buildPhases = (
+				EBC97C26311E47F885E706E3 /* Check Pods Manifest.lock */,
+				F1F651341835357D00EBB199 /* Sources */,
+				F1F651351835357D00EBB199 /* Frameworks */,
+				F1F651361835357D00EBB199 /* Resources */,
+				083A2FCBD3AD4B4D83B56CE8 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1F651461835357D00EBB199 /* PBXTargetDependency */,
+			);
+			name = TenByTenTests;
+			productName = TenByTenTests;
+			productReference = F1F651381835357D00EBB199 /* TenByTenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F1F88BFD16029BBB005C375F /* TenByTen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1F88C3416029BBC005C375F /* Build configuration list for PBXNativeTarget "TenByTen" */;
+			buildPhases = (
+				F1F88BFA16029BBB005C375F /* Sources */,
+				F1F88BFB16029BBB005C375F /* Frameworks */,
+				F1F88BFC16029BBB005C375F /* Resources */,
+				74E43CE3CBFB434180A8AD13 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TenByTen;
+			productName = TenByTen;
+			productReference = F1F88BFE16029BBB005C375F /* 10x10.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1F88BF516029BBB005C375F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TT;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = GaltSoft;
+				TargetAttributes = {
+					F1F651371835357D00EBB199 = {
+						TestTargetID = F1F88BFD16029BBB005C375F;
+					};
+					F1F88BFD16029BBB005C375F = {
+						DevelopmentTeam = FCFUAUMXPQ;
+					};
+				};
+			};
+			buildConfigurationList = F1F88BF816029BBB005C375F /* Build configuration list for PBXProject "TenByTen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F1F88BF316029BBB005C375F;
+			productRefGroup = F1F88BFF16029BBB005C375F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1F88BFD16029BBB005C375F /* TenByTen */,
+				F1F651371835357D00EBB199 /* TenByTenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1F651361835357D00EBB199 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1F651411835357D00EBB199 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1F88BFC16029BBB005C375F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1F88C0D16029BBB005C375F /* InfoPlist.strings in Resources */,
+				F1F88C1616029BBB005C375F /* MainStoryboard_iPhone.storyboard in Resources */,
+				F1F88C1916029BBB005C375F /* MainStoryboard_iPad.storyboard in Resources */,
+				F1897E37160345AE00963B5F /* BlankImage.png in Resources */,
+				F1897E391606AB9300963B5F /* BlankImage@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		083A2FCBD3AD4B4D83B56CE8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Pods-TenByTenTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74E43CE3CBFB434180A8AD13 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Pods-resources.sh\"\n";
+		};
+		EBC97C26311E47F885E706E3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1F651341835357D00EBB199 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1024EF418353A04001D6ED2 /* TTDataManagerTests.m in Sources */,
+				F1F6514B183535A700EBB199 /* TTKeyDateTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1F88BFA16029BBB005C375F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1F88C0F16029BBB005C375F /* main.m in Sources */,
+				F1F88C1316029BBB005C375F /* TTAppDelegate.m in Sources */,
+				F197AAAA1602AFBF00C6EFB9 /* TTDataManager.m in Sources */,
+				F197AAAD1602B0B200C6EFB9 /* TTTenXTenApiClient.m in Sources */,
+				F197AAB01602B26C00C6EFB9 /* TTKeyDate.m in Sources */,
+				F197AABA1602CF0D00C6EFB9 /* TTHourViewController.m in Sources */,
+				F197AABD1603145C00C6EFB9 /* TTKeyWord.m in Sources */,
+				F1897E3116033D6400963B5F /* TTHourViewCell.m in Sources */,
+				F1897E341603442400963B5F /* TTImageView.m in Sources */,
+				F1897E5F1606D80C00963B5F /* TTWordViewController.m in Sources */,
+				F1897E631606E34200963B5F /* TTWordImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1F651461835357D00EBB199 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1F88BFD16029BBB005C375F /* TenByTen */;
+			targetProxy = F1F651451835357D00EBB199 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F1F6513F1835357D00EBB199 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1F651401835357D00EBB199 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F1F88C0B16029BBB005C375F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1F88C0C16029BBB005C375F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F1F88C1416029BBB005C375F /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1F88C1516029BBB005C375F /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		F1F88C1716029BBB005C375F /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1F88C1816029BBB005C375F /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F1F651481835357D00EBB199 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AB50BDEFE0A4C3C8D8E5022 /* Pods-TenByTenTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/10x10.app/10x10";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TenByTenTests/TenByTenTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "TenByTenTests/TenByTenTests-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F1F651491835357D00EBB199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AB50BDEFE0A4C3C8D8E5022 /* Pods-TenByTenTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/10x10.app/10x10";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TenByTenTests/TenByTenTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "TenByTenTests/TenByTenTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		F1F88C3216029BBC005C375F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1F88C3316029BBC005C375F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1F88C3516029BBC005C375F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B322CB72B6447C19C0B8195 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TenByTen/TenByTen-Prefix.pch";
+				INFOPLIST_FILE = "TenByTen/TenByTen-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = 10x10;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F1F88C3616029BBC005C375F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B322CB72B6447C19C0B8195 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TenByTen/TenByTen-Prefix.pch";
+				INFOPLIST_FILE = "TenByTen/TenByTen-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = 10x10;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1F651471835357D00EBB199 /* Build configuration list for PBXNativeTarget "TenByTenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1F651481835357D00EBB199 /* Debug */,
+				F1F651491835357D00EBB199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1F88BF816029BBB005C375F /* Build configuration list for PBXProject "TenByTen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1F88C3216029BBC005C375F /* Debug */,
+				F1F88C3316029BBC005C375F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1F88C3416029BBC005C375F /* Build configuration list for PBXNativeTarget "TenByTen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1F88C3516029BBC005C375F /* Debug */,
+				F1F88C3616029BBC005C375F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1F88BF516029BBB005C375F /* Project object */;
+}
