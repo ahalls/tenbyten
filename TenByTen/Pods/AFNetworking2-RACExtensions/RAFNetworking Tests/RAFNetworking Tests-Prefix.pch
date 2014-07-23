@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'RAFNetworking Tests' target in the 'RAFNetworking Tests' project
+//
+
+#ifdef __OBJC__
+	#define EXP_SHORTHAND
+	#import <Expecta.h>
+	#import <Specta.h>
+#endif

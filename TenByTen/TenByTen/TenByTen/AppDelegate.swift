@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Darwin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
+        
+        RX_Playground();
+        
         return true
     }
 
@@ -42,5 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func RX_Playground() {
+        
+        // 1) Basic Sequence
+        var array:NSArray = [1, 2, 3, 4]
+        var stream = array.rac_sequence
+        var result = stream.map() {(value: AnyObject!) -> AnyObject! in
+            return pow(Float(value as NSNumber),2)}
+        println("result: \(result.array)")
+    }
 }
 

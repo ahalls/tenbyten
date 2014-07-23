@@ -9,5 +9,7 @@
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
 #import "MMProgressHUD.h"
-//#import "ReactiveCocoa.h"
-//#import "RACAFNetworking.h"
+
+// Note: Manual Adding these to Project, waiting until Cocoapods catch up to Xcode 6
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "RACAFNetworking.h"

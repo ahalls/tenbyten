@@ -1,8 +1,9 @@
 platform :ios, '8.0'
 xcodeproj 'TenByTen/TenByTen.xcodeproj'
 pod 'AFNetworking'
-pod 'AFNetworking2-RACExtensions'
-pod 'ReactiveCocoa'
+# Released version doesn't work with Swift and Xcode6
+#pod 'AFNetworking2-RACExtensions'
+#pod 'ReactiveCocoa'
 pod 'MMProgressHUD'
 target :TenByTenTests, :exclusive => true do
    pod 'Kiwi'

@@ -9,17 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-AFNetworking2-RACExtensions.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-MMProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09E4461C012E4C529A770DF8</key>
+		<key>0087128B82F143B5A88E4B97</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2F903BCC42CB4CC9A8648681</key>
+		<key>22AB20740AAB4438A0799F08</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37FFE5F605DE4D2887EA800E</key>
+		<key>76428EC55BBD48B5BF810E35</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B320FE21716408A90669A00</key>
+		<key>8FE2CB14B9CC457EA3B3C661</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F2C0C9E53B14B8EAF62234A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>96FC79271A7847D580ECD8BA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EA2523820F664BDE842E83D5</key>
+		<key>B59F698D4F5F4F73B04544C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
