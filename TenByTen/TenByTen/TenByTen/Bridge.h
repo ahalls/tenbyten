@@ -7,6 +7,7 @@
 //
 
 #import "AFNetworking.h"
+#import "UIKit+AFNetworking.h"
 #import "MMProgressHUD.h"
 //#import "ReactiveCocoa.h"
 //#import "RACAFNetworking.h"

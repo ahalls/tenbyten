@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var imageView: UIImageView
-    @IBOutlet var headerLabel: UILabel
+    @IBOutlet var imageView: UIImageView?
+    @IBOutlet var headerLabel: UILabel?
     
     let managerImage = AFHTTPRequestOperationManager()
     let managerText =  AFHTTPRequestOperationManager()
@@ -38,34 +38,24 @@ class ViewController: UIViewController {
                     println("dateString: \(dateString), date: \(date)");
                     
                     fm.dateFormat = "MMMM dd, yyyy"
-                    self.headerLabel.text = fm.stringFromDate(date);
+                    self.headerLabel!.text = fm.stringFromDate(date);
                     
                 }
                },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 println("Error: " + error.localizedDescription)
             })
-        
+       
+        var request = NSURLRequest( URL:  NSURL(string: "http://tenbyten.org/Data/global/Now/now.jpg"))
+        self.imageView!.setImageWithURLRequest( request,
+            placeholderImage: nil,
+            success: {(request: NSURLRequest? ,response: NSHTTPURLResponse? ,image: UIImage?) -> Void
+                in self.imageView!.image = image
+                MMProgressHUD.dismiss() },
+            failure: { (request: NSURLRequest?, response: NSHTTPURLResponse?, error: NSError?) -> Void
+                in MMProgressHUD.dismiss()
+                println("Error: " + error!.localizedDescription) })
 
-        
-        
-        managerImage.responseSerializer =  AFImageResponseSerializer()
-        
-        managerImage.GET("http://tenbyten.org/Data/global/Now/now.jpg",
-            parameters: nil,
-            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-
-                MMProgressHUD.dismiss()
-                
-                if responseObject as? UIImage {
-                    self.imageView.image = responseObject as? UIImage
-                }
-                
-            },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                MMProgressHUD.dismiss()
-                println("Error: " + error.localizedDescription)
-            })
         
       
     }
