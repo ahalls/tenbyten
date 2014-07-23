@@ -25,10 +25,27 @@ class ViewController: UIViewController {
         MMProgressHUD.show()
         managerText.responseSerializer =  AFHTTPResponseSerializer()
         
-        managerText.rac_GET("http://tenbyten.org/Data/global/Now/dateString.txt",
-            parameters: nil).subscribeNext() {(value:AnyObject!) -> Void in
-                var text : String = value as String
-                println("text: \(text)")
+        var request =  managerText.rac_GET("http://tenbyten.org/Data/global/Now/dateString.txt",
+            parameters: nil)
+            
+        request.subscribeNext() {(responseObject:AnyObject!) -> Void in
+            if (responseObject as? NSData) {
+                                   let dateString = NSString(data: responseObject as? NSData,  encoding: NSASCIIStringEncoding)
+                                    let fm = NSDateFormatter();
+                                  //2014/07/21/05
+              
+                                    fm.dateFormat = "yyyy/MM/dd/HH\n"
+                                  let date = fm.dateFromString(dateString)
+               
+                                   println("dateString: \(dateString), date: \(date)");
+                
+                                 fm.dateFormat = "MMMM dd, yyyy"
+                                   self.headerLabel!.text = fm.stringFromDate(date);
+                   }
+        }
+        
+        request.subscribeError(){(error:NSError!) -> Void in
+          println("Error: " + error!.localizedDescription)
         }
         
 //        [[manager rac_GET:path parameters:params] subscribeNext:^(id JSON) {
@@ -57,8 +74,8 @@ class ViewController: UIViewController {
 //                println("Error: " + error.localizedDescription)
 //            })
 //       
-        var request = NSURLRequest( URL:  NSURL(string: "http://tenbyten.org/Data/global/Now/now.jpg"))
-      self.imageView!.setImageWithURLRequest( request,
+        var imageRequest = NSURLRequest( URL:  NSURL(string: "http://tenbyten.org/Data/global/Now/now.jpg"))
+      self.imageView!.setImageWithURLRequest( imageRequest,
            placeholderImage: nil,
            success: {(request: NSURLRequest? ,response: NSHTTPURLResponse? ,image: UIImage?) -> Void
                in self.imageView!.image = image
