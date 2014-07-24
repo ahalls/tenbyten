@@ -13,13 +13,18 @@ import Darwin
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
-
-
+    var navigationController: UINavigationController?
+   
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
         
         RX_Playground();
         
+        bind()
+    
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 
@@ -46,6 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func setupViewModels() {
+        
+    }
     func RX_Playground() {
         
         // 1) Basic Sequence
@@ -55,5 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return pow(Float(value as NSNumber),2)}
         println("result: \(result.array)")
     }
+    
+    func bind() {
+        navigationController =
+            UINavigationController(rootViewController: ViewController(_viewModel:ViewModel(service: TenByTenService())))
+        
+    }
+
 }
 

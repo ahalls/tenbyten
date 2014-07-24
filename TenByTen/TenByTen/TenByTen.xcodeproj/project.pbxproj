@@ -18,11 +18,21 @@
 		F15844CF197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844C8197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.m */; };
 		F15844D0197FE585001CFCA3 /* AFURLConnectionOperation+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844CA197FE585001CFCA3 /* AFURLConnectionOperation+RACSupport.m */; };
 		F15844D1197FE585001CFCA3 /* RACSubscriber+AFProgressCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844CD197FE585001CFCA3 /* RACSubscriber+AFProgressCallbacks.m */; };
+		F15844D7197FF6FC001CFCA3 /* NSData+TenByTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */; };
+		F15844DB19800452001CFCA3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844DA19800452001CFCA3 /* ViewModel.swift */; };
+		F1AA32A21980F5E6005C9FEB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1AA32A11980F5E6005C9FEB /* ViewController.xib */; };
 		F1B47B73197FA2B90067E1DE /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B47B67197FA2530067E1DE /* libReactiveCocoa-iOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F12AADD6197CD8EA00F2EFC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F12AADBB197CD8EA00F2EFC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F12AADC2197CD8EA00F2EFC1;
+			remoteInfo = TenByTen;
+		};
+		F1AA32AA1980F670005C9FEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F12AADBB197CD8EA00F2EFC1 /* Project object */;
 			proxyType = 1;
@@ -111,6 +121,9 @@
 		F15844CB197FE585001CFCA3 /* RACAFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACAFNetworking.h; sourceTree = "<group>"; };
 		F15844CC197FE585001CFCA3 /* RACSubscriber+AFProgressCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACSubscriber+AFProgressCallbacks.h"; sourceTree = "<group>"; };
 		F15844CD197FE585001CFCA3 /* RACSubscriber+AFProgressCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSubscriber+AFProgressCallbacks.m"; sourceTree = "<group>"; };
+		F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSData+TenByTen.swift"; path = "Backend/NSData+TenByTen.swift"; sourceTree = "<group>"; };
+		F15844DA19800452001CFCA3 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = Models/ViewModel.swift; sourceTree = "<group>"; };
+		F1AA32A11980F5E6005C9FEB /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		F1B47B5A197FA2520067E1DE /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ../../../../github/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,8 +183,11 @@
 		F12AADC5197CD8EA00F2EFC1 /* TenByTen */ = {
 			isa = PBXGroup;
 			children = (
+				F15844D5197FF6BC001CFCA3 /* Backend */,
+				F15844D4197FF630001CFCA3 /* ViewModels */,
+				F15844D3197FF627001CFCA3 /* Models */,
+				F15844D2197FF619001CFCA3 /* Views */,
 				F12AADC8197CD8EA00F2EFC1 /* AppDelegate.swift */,
-				F12AADCA197CD8EA00F2EFC1 /* ViewController.swift */,
 				F12AADCC197CD8EA00F2EFC1 /* Main.storyboard */,
 				F12AADCF197CD8EA00F2EFC1 /* Images.xcassets */,
 				F12AADC6197CD8EA00F2EFC1 /* Supporting Files */,
@@ -230,6 +246,38 @@
 			name = RACAFNetworking;
 			sourceTree = "<group>";
 		};
+		F15844D2197FF619001CFCA3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F12AADCA197CD8EA00F2EFC1 /* ViewController.swift */,
+				F1AA32A11980F5E6005C9FEB /* ViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F15844D3197FF627001CFCA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F15844D4197FF630001CFCA3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F15844DA19800452001CFCA3 /* ViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		F15844D5197FF6BC001CFCA3 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */,
+			);
+			name = Backend;
+			sourceTree = "<group>";
+		};
 		F1B47B5B197FA2520067E1DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +329,7 @@
 			dependencies = (
 				F12AADD7197CD8EA00F2EFC1 /* PBXTargetDependency */,
 				F1B47B75197FA9E20067E1DE /* PBXTargetDependency */,
+				F1AA32AB1980F670005C9FEB /* PBXTargetDependency */,
 			);
 			name = TenByTenTests;
 			productName = TenByTenTests;
@@ -389,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F12AADCE197CD8EA00F2EFC1 /* Main.storyboard in Resources */,
+				F1AA32A21980F5E6005C9FEB /* ViewController.xib in Resources */,
 				F12AADD0197CD8EA00F2EFC1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,9 +522,11 @@
 			files = (
 				F15844CF197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.m in Sources */,
 				F15844D0197FE585001CFCA3 /* AFURLConnectionOperation+RACSupport.m in Sources */,
+				F15844D7197FF6FC001CFCA3 /* NSData+TenByTen.swift in Sources */,
 				F12AADCB197CD8EA00F2EFC1 /* ViewController.swift in Sources */,
 				F15844D1197FE585001CFCA3 /* RACSubscriber+AFProgressCallbacks.m in Sources */,
 				F12AADC9197CD8EA00F2EFC1 /* AppDelegate.swift in Sources */,
+				F15844DB19800452001CFCA3 /* ViewModel.swift in Sources */,
 				F15844CE197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +546,11 @@
 			isa = PBXTargetDependency;
 			target = F12AADC2197CD8EA00F2EFC1 /* TenByTen */;
 			targetProxy = F12AADD6197CD8EA00F2EFC1 /* PBXContainerItemProxy */;
+		};
+		F1AA32AB1980F670005C9FEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F12AADC2197CD8EA00F2EFC1 /* TenByTen */;
+			targetProxy = F1AA32AA1980F670005C9FEB /* PBXContainerItemProxy */;
 		};
 		F1B47B75197FA9E20067E1DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

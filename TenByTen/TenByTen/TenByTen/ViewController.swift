@@ -16,11 +16,36 @@ class ViewController: UIViewController {
     
     let managerImage = AFHTTPRequestOperationManager()
     let managerText =  AFHTTPRequestOperationManager()
+    let viewModel: ViewModel
+    
+    init(_viewModel:ViewModel) {
+        self.viewModel = _viewModel
+        super.init(nibName: "ViewController", bundle: nil)
+    }
+    
+    func bindViewModel() {
+        self.title = self.viewModel.title;
+        
+//         self.viewModel.connectionErrors.subscribeNext()
+//        :^(NSError *error) {
+//            UIAlertView *alert =
+//            [[UIAlertView alloc] initWithTitle:@"Connection Error"
+//            message:@"There was a problem reaching Flickr."
+//            delegate:nil
+//            cancelButtonTitle:@"OK"
+//            otherButtonTitles:nil];
+//            [alert show];
+//            }];
+        
+    }
 
-                            
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        bindViewModel()
+        
+        title = self.viewModel.title;
         
         MMProgressHUD.show()
         managerText.responseSerializer =  AFHTTPResponseSerializer()
@@ -28,26 +53,22 @@ class ViewController: UIViewController {
         var request =  managerText.rac_GET("http://tenbyten.org/Data/global/Now/dateString.txt",
             parameters: nil)
             
-        request.subscribeNext() {(responseObject:AnyObject!) -> Void in
-            if (responseObject as? NSData) {
-                                   let dateString = NSString(data: responseObject as? NSData,  encoding: NSASCIIStringEncoding)
-                                    let fm = NSDateFormatter();
-                                  //2014/07/21/05
-              
-                                    fm.dateFormat = "yyyy/MM/dd/HH\n"
-                                  let date = fm.dateFromString(dateString)
-               
-                                   println("dateString: \(dateString), date: \(date)");
-                
-                                 fm.dateFormat = "MMMM dd, yyyy"
-                                   self.headerLabel!.text = fm.stringFromDate(date);
-                   }
+        request.subscribeNext() {(responseObject:AnyObject!)  -> Void in
+            if let data = responseObject as? NSData {
+                // Causes error in compiler
+                //var date =  data.tbt_date //    NSData_TenByTen.dateFromData(data)
+                let date = NSData_TenByTen.dateFromData(data)
+                var fm = NSDateFormatter()
+                fm.dateFormat = "MMMM dd, yyyy"
+                self.headerLabel!.text = fm.stringFromDate( date)
+            }
         }
         
         request.subscribeError(){(error:NSError!) -> Void in
           println("Error: " + error!.localizedDescription)
         }
         
+ 
 //        [[manager rac_GET:path parameters:params] subscribeNext:^(id JSON) {
 //            //Voila, magical JSON…
 //            }];
@@ -100,6 +121,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 
 
 }
