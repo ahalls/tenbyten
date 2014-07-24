@@ -26,6 +26,23 @@ class ViewController: UIViewController {
     func bindViewModel() {
         self.title = self.viewModel.title;
         
+        self.viewModel.dateTitle?.subscribeNext() {
+            (responseObject:AnyObject!)  -> Void in
+            if let date = responseObject as? NSDate {
+                var fm = NSDateFormatter()
+                    fm.dateFormat = "MMMM dd, yyyy"
+                    self.headerLabel!.text = fm.stringFromDate( date)
+            }
+        }
+        
+//        self.viewModel.connectionErrors?.subscribeError() {
+//            (responseObject:AnyObject!)  -> Void in
+//            if let error = responseObject as ? NSError {
+//                let alert = UIAlertView(title: "Connection Error", message: error.description , delegate: nil, cancelButtonTitle: OK, otherButtonTitles: nil, nil)
+//                alert.show()
+//            }
+//        }
+    }
 //         self.viewModel.connectionErrors.subscribeNext()
 //        :^(NSError *error) {
 //            UIAlertView *alert =
@@ -37,7 +54,7 @@ class ViewController: UIViewController {
 //            [alert show];
 //            }];
         
-    }
+
 
      override func viewDidLoad() {
         
@@ -45,28 +62,28 @@ class ViewController: UIViewController {
         
         bindViewModel()
         
-        title = self.viewModel.title;
+
         
         MMProgressHUD.show()
         managerText.responseSerializer =  AFHTTPResponseSerializer()
         
-        var request =  managerText.rac_GET("http://tenbyten.org/Data/global/Now/dateString.txt",
+       var request =  managerText.rac_GET("http://tenbyten.org/Data/global/Now/dateString.txt",
             parameters: nil)
-            
+        
         request.subscribeNext() {(responseObject:AnyObject!)  -> Void in
             if let data = responseObject as? NSData {
                 // Causes error in compiler
-                //var date =  data.tbt_date //    NSData_TenByTen.dateFromData(data)
-                let date = NSData_TenByTen.dateFromData(data)
+               //var date =  data.tbt_date //    NSData_TenByTen.dateFromData(data)
+               let date = NSData_TenByTen.dateFromData(data)
                 var fm = NSDateFormatter()
                 fm.dateFormat = "MMMM dd, yyyy"
-                self.headerLabel!.text = fm.stringFromDate( date)
+                println(fm.stringFromDate( date))
             }
-        }
+       }
         
-        request.subscribeError(){(error:NSError!) -> Void in
-          println("Error: " + error!.localizedDescription)
-        }
+       request.subscribeError(){(error:NSError!) -> Void in
+         println("Error: " + error!.localizedDescription)
+       }
         
  
 //        [[manager rac_GET:path parameters:params] subscribeNext:^(id JSON) {

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         RX_Playground();
         
-        bind()
+        bindViewsToServices()
     
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.rootViewController = navigationController
@@ -64,9 +64,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("result: \(result.array)")
     }
     
-    func bind() {
+    func bindViewsToServices() {
         navigationController =
-            UINavigationController(rootViewController: ViewController(_viewModel:ViewModel(service: TenByTenService())))
+            UINavigationController(rootViewController:
+                ViewController(_viewModel:
+                    ViewModel(newsService: TenByTenService())))
         
     }
 

@@ -9,5 +9,7 @@
 import Foundation
 
 protocol NewsServiceProtocol {
-    
+    var currentDate:RACSignal {  get  }
+    var currentSummaryImage:RACSignal { get }
+    var errorStatus:RACSignal { get }
 }

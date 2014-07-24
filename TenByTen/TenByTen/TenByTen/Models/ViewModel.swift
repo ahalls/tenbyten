@@ -10,6 +10,11 @@ import Foundation
 
 class ViewModel {
     var title: String = "TenByTen"
+    var dateTitle: RACSignal? {
+        get {
+            return newsService?.currentDate
+        }
+    }
     
     var connectionErrors: RACSignal?
     var image: UIImage?
@@ -17,5 +22,11 @@ class ViewModel {
     
     init(newsService _newsService: NewsServiceProtocol) {
         newsService = _newsService
+        
+        bindToServices()
     }
+    
+    func bindToServices() {
+        
+      }
 }
