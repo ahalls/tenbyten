@@ -65,10 +65,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func bindViewsToServices() {
+        
+        var tenByTenService = TenByTenService()
+        
+        tenByTenService.isExecuting ~> RAC(UIApplication.sharedApplication(), "networkActivityIndicatorVisible")
+        
         navigationController =
             UINavigationController(rootViewController:
                 ViewController(_viewModel:
-                    ViewModel(newsService: TenByTenService())))
+                    ViewModel(newsService: tenByTenService)))
         
     }
 

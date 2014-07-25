@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		792147A842F8424683D48688 /* libPods-TenByTenTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3C2CFF030B4D7EB9AC90CA /* libPods-TenByTenTests.a */; };
 		C0F94A8D9FDF445B87602975 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6394F669C345849F20D587 /* libPods.a */; };
+		F10A318A1981EE8F005797CF /* RACExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A31891981EE8F005797CF /* RACExtensions.swift */; };
 		F12AADC9197CD8EA00F2EFC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AADC8197CD8EA00F2EFC1 /* AppDelegate.swift */; };
 		F12AADCB197CD8EA00F2EFC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AADCA197CD8EA00F2EFC1 /* ViewController.swift */; };
 		F12AADD0197CD8EA00F2EFC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12AADCF197CD8EA00F2EFC1 /* Images.xcassets */; };
@@ -110,6 +111,7 @@
 		5D3C2CFF030B4D7EB9AC90CA /* libPods-TenByTenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TenByTenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		835DE1AC10E6471CB8DD6BA1 /* Pods-TenByTenTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenByTenTests.xcconfig"; path = "../Pods/Pods-TenByTenTests.xcconfig"; sourceTree = "<group>"; };
 		8A6394F669C345849F20D587 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10A31891981EE8F005797CF /* RACExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RACExtensions.swift; path = ThirdParty/RACExtensions/RACExtensions.swift; sourceTree = SOURCE_ROOT; };
 		F12AADC3197CD8EA00F2EFC1 /* TenByTen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenByTen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12AADC7197CD8EA00F2EFC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12AADC8197CD8EA00F2EFC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,14 @@
 				5D3C2CFF030B4D7EB9AC90CA /* libPods-TenByTenTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F10A31811981EE50005797CF /* RACExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				F10A31891981EE8F005797CF /* RACExtensions.swift */,
+			);
+			name = RACExtensions;
 			sourceTree = "<group>";
 		};
 		F12AADBA197CD8EA00F2EFC1 = {
@@ -232,6 +242,7 @@
 		F15844C3197FE15C001CFCA3 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				F10A31811981EE50005797CF /* RACExtensions */,
 				F15844C4197FE168001CFCA3 /* RACAFNetworking */,
 			);
 			name = ThirdParty;
@@ -540,6 +551,7 @@
 				F12AADC9197CD8EA00F2EFC1 /* AppDelegate.swift in Sources */,
 				F15844DB19800452001CFCA3 /* ViewModel.swift in Sources */,
 				F15844CE197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m in Sources */,
+				F10A318A1981EE8F005797CF /* RACExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
