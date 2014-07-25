@@ -75,6 +75,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 ViewController(_viewModel:
                     ViewModel(newsService: tenByTenService)))
         
+        
+        tenByTenService.errorStatus.subscribeError(){(error:NSError!) -> Void in
+            println("Error: " + error!.localizedDescription)
+            let alertView = UIAlertView(title: "Network Error", message: error!.localizedDescription, delegate: nil, cancelButtonTitle: "OK")
+            alertView.show()
+        }
+        
     }
 
 }
