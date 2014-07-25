@@ -11,7 +11,6 @@
 		C0F94A8D9FDF445B87602975 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6394F669C345849F20D587 /* libPods.a */; };
 		F12AADC9197CD8EA00F2EFC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AADC8197CD8EA00F2EFC1 /* AppDelegate.swift */; };
 		F12AADCB197CD8EA00F2EFC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AADCA197CD8EA00F2EFC1 /* ViewController.swift */; };
-		F12AADCE197CD8EA00F2EFC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12AADCC197CD8EA00F2EFC1 /* Main.storyboard */; };
 		F12AADD0197CD8EA00F2EFC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12AADCF197CD8EA00F2EFC1 /* Images.xcassets */; };
 		F12AADDC197CD8EA00F2EFC1 /* TenByTenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AADDB197CD8EA00F2EFC1 /* TenByTenTests.swift */; };
 		F15844CE197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844C6197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m */; };
@@ -21,6 +20,8 @@
 		F15844D7197FF6FC001CFCA3 /* NSData+TenByTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */; };
 		F15844DB19800452001CFCA3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844DA19800452001CFCA3 /* ViewModel.swift */; };
 		F1AA32A21980F5E6005C9FEB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1AA32A11980F5E6005C9FEB /* ViewController.xib */; };
+		F1AA32AF19810A15005C9FEB /* TenByTenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32AE19810A15005C9FEB /* TenByTenService.swift */; };
+		F1AA32B119810B81005C9FEB /* NewsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32B019810B81005C9FEB /* NewsServiceProtocol.swift */; };
 		F1B47B73197FA2B90067E1DE /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B47B67197FA2530067E1DE /* libReactiveCocoa-iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,13 @@
 			remoteInfo = TenByTen;
 		};
 		F1AA32AA1980F670005C9FEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F12AADBB197CD8EA00F2EFC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F12AADC2197CD8EA00F2EFC1;
+			remoteInfo = TenByTen;
+		};
+		F1AA32AC1980F670005C9FEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F12AADBB197CD8EA00F2EFC1 /* Project object */;
 			proxyType = 1;
@@ -106,7 +114,6 @@
 		F12AADC7197CD8EA00F2EFC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12AADC8197CD8EA00F2EFC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12AADCA197CD8EA00F2EFC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F12AADCD197CD8EA00F2EFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F12AADCF197CD8EA00F2EFC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F12AADD5197CD8EA00F2EFC1 /* TenByTenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenByTenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12AADDA197CD8EA00F2EFC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,9 +128,11 @@
 		F15844CB197FE585001CFCA3 /* RACAFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACAFNetworking.h; sourceTree = "<group>"; };
 		F15844CC197FE585001CFCA3 /* RACSubscriber+AFProgressCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACSubscriber+AFProgressCallbacks.h"; sourceTree = "<group>"; };
 		F15844CD197FE585001CFCA3 /* RACSubscriber+AFProgressCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSubscriber+AFProgressCallbacks.m"; sourceTree = "<group>"; };
-		F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSData+TenByTen.swift"; path = "Backend/NSData+TenByTen.swift"; sourceTree = "<group>"; };
+		F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSData+TenByTen.swift"; path = "Services/NSData+TenByTen.swift"; sourceTree = "<group>"; };
 		F15844DA19800452001CFCA3 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = Models/ViewModel.swift; sourceTree = "<group>"; };
 		F1AA32A11980F5E6005C9FEB /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		F1AA32AE19810A15005C9FEB /* TenByTenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TenByTenService.swift; path = Services/TenByTenService.swift; sourceTree = "<group>"; };
+		F1AA32B019810B81005C9FEB /* NewsServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsServiceProtocol.swift; sourceTree = "<group>"; };
 		F1B47B5A197FA2520067E1DE /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ../../../../github/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,14 +192,13 @@
 		F12AADC5197CD8EA00F2EFC1 /* TenByTen */ = {
 			isa = PBXGroup;
 			children = (
-				F15844D5197FF6BC001CFCA3 /* Backend */,
-				F15844D4197FF630001CFCA3 /* ViewModels */,
-				F15844D3197FF627001CFCA3 /* Models */,
-				F15844D2197FF619001CFCA3 /* Views */,
 				F12AADC8197CD8EA00F2EFC1 /* AppDelegate.swift */,
-				F12AADCC197CD8EA00F2EFC1 /* Main.storyboard */,
 				F12AADCF197CD8EA00F2EFC1 /* Images.xcassets */,
+				F15844D3197FF627001CFCA3 /* Models */,
+				F15844D5197FF6BC001CFCA3 /* Services */,
 				F12AADC6197CD8EA00F2EFC1 /* Supporting Files */,
+				F15844D4197FF630001CFCA3 /* ViewModels */,
+				F15844D2197FF619001CFCA3 /* Views */,
 			);
 			path = TenByTen;
 			sourceTree = "<group>";
@@ -270,12 +278,14 @@
 			name = ViewModels;
 			sourceTree = "<group>";
 		};
-		F15844D5197FF6BC001CFCA3 /* Backend */ = {
+		F15844D5197FF6BC001CFCA3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */,
+				F1AA32AE19810A15005C9FEB /* TenByTenService.swift */,
+				F1AA32B019810B81005C9FEB /* NewsServiceProtocol.swift */,
 			);
-			name = Backend;
+			name = Services;
 			sourceTree = "<group>";
 		};
 		F1B47B5B197FA2520067E1DE /* Products */ = {
@@ -330,6 +340,7 @@
 				F12AADD7197CD8EA00F2EFC1 /* PBXTargetDependency */,
 				F1B47B75197FA9E20067E1DE /* PBXTargetDependency */,
 				F1AA32AB1980F670005C9FEB /* PBXTargetDependency */,
+				F1AA32AD1980F670005C9FEB /* PBXTargetDependency */,
 			);
 			name = TenByTenTests;
 			productName = TenByTenTests;
@@ -437,7 +448,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F12AADCE197CD8EA00F2EFC1 /* Main.storyboard in Resources */,
 				F1AA32A21980F5E6005C9FEB /* ViewController.xib in Resources */,
 				F12AADD0197CD8EA00F2EFC1 /* Images.xcassets in Resources */,
 			);
@@ -520,10 +530,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AA32B119810B81005C9FEB /* NewsServiceProtocol.swift in Sources */,
 				F15844CF197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.m in Sources */,
 				F15844D0197FE585001CFCA3 /* AFURLConnectionOperation+RACSupport.m in Sources */,
 				F15844D7197FF6FC001CFCA3 /* NSData+TenByTen.swift in Sources */,
 				F12AADCB197CD8EA00F2EFC1 /* ViewController.swift in Sources */,
+				F1AA32AF19810A15005C9FEB /* TenByTenService.swift in Sources */,
 				F15844D1197FE585001CFCA3 /* RACSubscriber+AFProgressCallbacks.m in Sources */,
 				F12AADC9197CD8EA00F2EFC1 /* AppDelegate.swift in Sources */,
 				F15844DB19800452001CFCA3 /* ViewModel.swift in Sources */,
@@ -552,23 +564,17 @@
 			target = F12AADC2197CD8EA00F2EFC1 /* TenByTen */;
 			targetProxy = F1AA32AA1980F670005C9FEB /* PBXContainerItemProxy */;
 		};
+		F1AA32AD1980F670005C9FEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F12AADC2197CD8EA00F2EFC1 /* TenByTen */;
+			targetProxy = F1AA32AC1980F670005C9FEB /* PBXContainerItemProxy */;
+		};
 		F1B47B75197FA9E20067E1DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F12AADC2197CD8EA00F2EFC1 /* TenByTen */;
 			targetProxy = F1B47B74197FA9E20067E1DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F12AADCC197CD8EA00F2EFC1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F12AADCD197CD8EA00F2EFC1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F12AADDD197CD8EA00F2EFC1 /* Debug */ = {

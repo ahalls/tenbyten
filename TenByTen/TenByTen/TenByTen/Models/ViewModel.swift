@@ -17,13 +17,22 @@ class ViewModel {
     }
     
     var connectionErrors: RACSignal?
-    var image: UIImage?
+    var image: RACSignal? {
+        get {
+            return newsService?.currentSummaryImage
+        }
+    }
     var newsService: NewsServiceProtocol?
     
     init(newsService _newsService: NewsServiceProtocol) {
         newsService = _newsService
         
         bindToServices()
+    }
+    var isExecuting: RACSignal? {
+        get {
+            return newsService?.isExecuting
+        }
     }
     
     func bindToServices() {

@@ -9,7 +9,6 @@
             <connections>
                 <outlet property="headerLabel" destination="wL0-hp-ApY" id="fId-Ka-9qk"/>
                 <outlet property="imageView" destination="Iid-yo-TpF" id="FqF-GT-unB"/>
-                <outlet property="textField" destination="Qz0-fW-9kn" id="2li-IG-4lD"/>
                 <outlet property="view" destination="GGj-vg-Tbx" id="Lps-kx-0Sd"/>
             </connections>
         </placeholder>
@@ -30,11 +29,6 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qz0-fW-9kn">
-                    <rect key="frame" x="112" y="257" width="97" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
