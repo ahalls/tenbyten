@@ -24,6 +24,10 @@
 		F1AA32AF19810A15005C9FEB /* TenByTenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32AE19810A15005C9FEB /* TenByTenService.swift */; };
 		F1AA32B119810B81005C9FEB /* NewsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32B019810B81005C9FEB /* NewsServiceProtocol.swift */; };
 		F1B47B73197FA2B90067E1DE /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B47B67197FA2530067E1DE /* libReactiveCocoa-iOS.a */; };
+		F1EBE27C19837A8A00580707 /* TenByTenServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EBE27B19837A8A00580707 /* TenByTenServiceTests.swift */; };
+		F1EBE28419837B9100580707 /* NewsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32B019810B81005C9FEB /* NewsServiceProtocol.swift */; };
+		F1EBE28519837B9400580707 /* TenByTenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32AE19810A15005C9FEB /* TenByTenService.swift */; };
+		F1EBE28619837B9700580707 /* NSData+TenByTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +108,13 @@
 			remoteGlobalIDString = F12AADC2197CD8EA00F2EFC1;
 			remoteInfo = TenByTen;
 		};
+		F1EBE28719837C0D00580707 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F12AADBB197CD8EA00F2EFC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F12AADC2197CD8EA00F2EFC1;
+			remoteInfo = TenByTen;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +147,7 @@
 		F1AA32AE19810A15005C9FEB /* TenByTenService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TenByTenService.swift; path = Services/TenByTenService.swift; sourceTree = "<group>"; };
 		F1AA32B019810B81005C9FEB /* NewsServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsServiceProtocol.swift; sourceTree = "<group>"; };
 		F1B47B5A197FA2520067E1DE /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ../../../../github/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
+		F1EBE27B19837A8A00580707 /* TenByTenServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenByTenServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +239,7 @@
 			children = (
 				F12AADDB197CD8EA00F2EFC1 /* TenByTenTests.swift */,
 				F12AADD9197CD8EA00F2EFC1 /* Supporting Files */,
+				F1EBE27B19837A8A00580707 /* TenByTenServiceTests.swift */,
 			);
 			path = TenByTenTests;
 			sourceTree = "<group>";
@@ -352,6 +365,7 @@
 				F1B47B75197FA9E20067E1DE /* PBXTargetDependency */,
 				F1AA32AB1980F670005C9FEB /* PBXTargetDependency */,
 				F1AA32AD1980F670005C9FEB /* PBXTargetDependency */,
+				F1EBE28819837C0D00580707 /* PBXTargetDependency */,
 			);
 			name = TenByTenTests;
 			productName = TenByTenTests;
@@ -559,7 +573,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1EBE27C19837A8A00580707 /* TenByTenServiceTests.swift in Sources */,
 				F12AADDC197CD8EA00F2EFC1 /* TenByTenTests.swift in Sources */,
+				F1EBE28519837B9400580707 /* TenByTenService.swift in Sources */,
+				F1EBE28619837B9700580707 /* NSData+TenByTen.swift in Sources */,
+				F1EBE28419837B9100580707 /* NewsServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +603,11 @@
 			isa = PBXTargetDependency;
 			target = F12AADC2197CD8EA00F2EFC1 /* TenByTen */;
 			targetProxy = F1B47B74197FA9E20067E1DE /* PBXContainerItemProxy */;
+		};
+		F1EBE28819837C0D00580707 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F12AADC2197CD8EA00F2EFC1 /* TenByTen */;
+			targetProxy = F1EBE28719837C0D00580707 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -20,7 +20,7 @@ struct RAC  {
         self.keyPath = keyPath
         self.nilValue = nilValue
     }
-    
+
     
     func assignSignal(signal : RACSignal) {
         signal.setKeyPath(self.keyPath, onObject: self.target, nilValue: self.nilValue)
@@ -36,3 +36,6 @@ operator infix ~> {}
 @infix func ~> (signal: RACSignal, rac: RAC) {
     rac.assignSignal(signal)
 }
+
+
+
