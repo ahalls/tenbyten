@@ -29,7 +29,7 @@ class TodayViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.preferredContentSize = CGSizeMake(0, 220);
+        self.preferredContentSize = view.frame.size
         self.viewModel.image?.subscribeNext() {
             (responseObject:AnyObject!)  -> Void in
             if let image = responseObject as? UIImage {
