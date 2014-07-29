@@ -14,6 +14,8 @@
 		F12AADCB197CD8EA00F2EFC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AADCA197CD8EA00F2EFC1 /* ViewController.swift */; };
 		F12AADD0197CD8EA00F2EFC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12AADCF197CD8EA00F2EFC1 /* Images.xcassets */; };
 		F12AADDC197CD8EA00F2EFC1 /* TenByTenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AADDB197CD8EA00F2EFC1 /* TenByTenTests.swift */; };
+		F133187F198700E3005E8A06 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133187E198700E3005E8A06 /* ViewModelTests.swift */; };
+		F133188019870102005E8A06 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844DA19800452001CFCA3 /* ViewModel.swift */; };
 		F15844CE197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844C6197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m */; };
 		F15844CF197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844C8197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.m */; };
 		F15844D0197FE585001CFCA3 /* AFURLConnectionOperation+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844CA197FE585001CFCA3 /* AFURLConnectionOperation+RACSupport.m */; };
@@ -132,6 +134,7 @@
 		F12AADDA197CD8EA00F2EFC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12AADDB197CD8EA00F2EFC1 /* TenByTenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenByTenTests.swift; sourceTree = "<group>"; };
 		F12AADE5197CD9CC00F2EFC1 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		F133187E198700E3005E8A06 /* ViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		F15844C5197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperationManager+RACSupport.h"; sourceTree = "<group>"; };
 		F15844C6197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+RACSupport.m"; sourceTree = "<group>"; };
 		F15844C7197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+RACSupport.h"; sourceTree = "<group>"; };
@@ -237,9 +240,10 @@
 		F12AADD8197CD8EA00F2EFC1 /* TenByTenTests */ = {
 			isa = PBXGroup;
 			children = (
+				F133187E198700E3005E8A06 /* ViewModelTests.swift */,
 				F12AADDB197CD8EA00F2EFC1 /* TenByTenTests.swift */,
-				F12AADD9197CD8EA00F2EFC1 /* Supporting Files */,
 				F1EBE27B19837A8A00580707 /* TenByTenServiceTests.swift */,
+				F12AADD9197CD8EA00F2EFC1 /* Supporting Files */,
 			);
 			path = TenByTenTests;
 			sourceTree = "<group>";
@@ -575,9 +579,11 @@
 			files = (
 				F1EBE27C19837A8A00580707 /* TenByTenServiceTests.swift in Sources */,
 				F12AADDC197CD8EA00F2EFC1 /* TenByTenTests.swift in Sources */,
+				F133187F198700E3005E8A06 /* ViewModelTests.swift in Sources */,
 				F1EBE28519837B9400580707 /* TenByTenService.swift in Sources */,
 				F1EBE28619837B9700580707 /* NSData+TenByTen.swift in Sources */,
 				F1EBE28419837B9100580707 /* NewsServiceProtocol.swift in Sources */,
+				F133188019870102005E8A06 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +741,7 @@
 				INFOPLIST_FILE = TenByTenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TenByTen/Bridge.h;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\" $(inherited)";
 			};
@@ -752,6 +759,7 @@
 				INFOPLIST_FILE = TenByTenTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TenByTen/Bridge.h;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\" $(inherited)";
 			};
