@@ -16,6 +16,10 @@
 		F12AADDC197CD8EA00F2EFC1 /* TenByTenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AADDB197CD8EA00F2EFC1 /* TenByTenTests.swift */; };
 		F133187F198700E3005E8A06 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133187E198700E3005E8A06 /* ViewModelTests.swift */; };
 		F133188019870102005E8A06 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844DA19800452001CFCA3 /* ViewModel.swift */; };
+		F13A8FCF1988103C0087EBF1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13A8FCE1988103C0087EBF1 /* NotificationCenter.framework */; };
+		F13A8FD41988103C0087EBF1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13A8FD31988103C0087EBF1 /* TodayViewController.swift */; };
+		F13A8FD61988103C0087EBF1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F13A8FD51988103C0087EBF1 /* MainInterface.storyboard */; };
+		F13A8FD91988103C0087EBF1 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F13A8FCD1988103C0087EBF1 /* Today.appex */; };
 		F15844CE197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844C6197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m */; };
 		F15844CF197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844C8197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.m */; };
 		F15844D0197FE585001CFCA3 /* AFURLConnectionOperation+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844CA197FE585001CFCA3 /* AFURLConnectionOperation+RACSupport.m */; };
@@ -30,6 +34,16 @@
 		F1EBE28419837B9100580707 /* NewsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32B019810B81005C9FEB /* NewsServiceProtocol.swift */; };
 		F1EBE28519837B9400580707 /* TenByTenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32AE19810A15005C9FEB /* TenByTenService.swift */; };
 		F1EBE28619837B9700580707 /* NSData+TenByTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */; };
+		F1EFFB3F198816B6003F31AB /* NSData+TenByTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844D6197FF6FC001CFCA3 /* NSData+TenByTen.swift */; };
+		F1EFFB40198816B9003F31AB /* TenByTenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32AE19810A15005C9FEB /* TenByTenService.swift */; };
+		F1EFFB41198816BB003F31AB /* NewsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA32B019810B81005C9FEB /* NewsServiceProtocol.swift */; };
+		F1EFFB4219881753003F31AB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15844DA19800452001CFCA3 /* ViewModel.swift */; };
+		F1EFFB4419881CE7003F31AB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1EFFB4319881CE7003F31AB /* libPods.a */; };
+		F1EFFB4519881CEC003F31AB /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B47B67197FA2530067E1DE /* libReactiveCocoa-iOS.a */; };
+		F1EFFB461988218F003F31AB /* AFHTTPRequestOperationManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844C6197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m */; };
+		F1EFFB4719882194003F31AB /* AFHTTPSessionManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844C8197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.m */; };
+		F1EFFB4819882198003F31AB /* AFURLConnectionOperation+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844CA197FE585001CFCA3 /* AFURLConnectionOperation+RACSupport.m */; };
+		F1EFFB491988219D003F31AB /* RACSubscriber+AFProgressCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = F15844CD197FE585001CFCA3 /* RACSubscriber+AFProgressCallbacks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +53,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = F12AADC2197CD8EA00F2EFC1;
 			remoteInfo = TenByTen;
+		};
+		F13A8FD71988103C0087EBF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F12AADBB197CD8EA00F2EFC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F13A8FCC1988103C0087EBF1;
+			remoteInfo = Today;
+		};
+		F13A8FDA1988103C0087EBF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F12AADBB197CD8EA00F2EFC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F13A8FCC1988103C0087EBF1;
+			remoteInfo = Today;
 		};
 		F1AA32AA1980F670005C9FEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -119,6 +147,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F13A8FE61988103C0087EBF1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F13A8FD91988103C0087EBF1 /* Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1BAE595658E54C45A9F7A093 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		5D3C2CFF030B4D7EB9AC90CA /* libPods-TenByTenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TenByTenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +177,11 @@
 		F12AADDB197CD8EA00F2EFC1 /* TenByTenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenByTenTests.swift; sourceTree = "<group>"; };
 		F12AADE5197CD9CC00F2EFC1 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		F133187E198700E3005E8A06 /* ViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		F13A8FCD1988103C0087EBF1 /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F13A8FCE1988103C0087EBF1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		F13A8FD21988103C0087EBF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F13A8FD31988103C0087EBF1 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		F13A8FD51988103C0087EBF1 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		F15844C5197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperationManager+RACSupport.h"; sourceTree = "<group>"; };
 		F15844C6197FE585001CFCA3 /* AFHTTPRequestOperationManager+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+RACSupport.m"; sourceTree = "<group>"; };
 		F15844C7197FE585001CFCA3 /* AFHTTPSessionManager+RACSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+RACSupport.h"; sourceTree = "<group>"; };
@@ -151,6 +198,7 @@
 		F1AA32B019810B81005C9FEB /* NewsServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsServiceProtocol.swift; sourceTree = "<group>"; };
 		F1B47B5A197FA2520067E1DE /* ReactiveCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveCocoa.xcodeproj; path = ../../../../github/ReactiveCocoa/ReactiveCocoaFramework/ReactiveCocoa.xcodeproj; sourceTree = "<group>"; };
 		F1EBE27B19837A8A00580707 /* TenByTenServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenByTenServiceTests.swift; sourceTree = "<group>"; };
+		F1EFFB4319881CE7003F31AB /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "../Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,15 +219,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F13A8FCA1988103C0087EBF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1EFFB4519881CEC003F31AB /* libReactiveCocoa-iOS.a in Frameworks */,
+				F1EFFB4419881CE7003F31AB /* libPods.a in Frameworks */,
+				F13A8FCF1988103C0087EBF1 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B34A696EF5784BDFBFDD3963 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1EFFB4319881CE7003F31AB /* libPods.a */,
 				F1B47B5A197FA2520067E1DE /* ReactiveCocoa.xcodeproj */,
 				8A6394F669C345849F20D587 /* libPods.a */,
 				5D3C2CFF030B4D7EB9AC90CA /* libPods-TenByTenTests.a */,
+				F13A8FCE1988103C0087EBF1 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,6 +258,7 @@
 				F15844C3197FE15C001CFCA3 /* ThirdParty */,
 				F12AADC5197CD8EA00F2EFC1 /* TenByTen */,
 				F12AADD8197CD8EA00F2EFC1 /* TenByTenTests */,
+				F13A8FD01988103C0087EBF1 /* TenByTen Today Extension */,
 				F12AADC4197CD8EA00F2EFC1 /* Products */,
 				1BAE595658E54C45A9F7A093 /* Pods.xcconfig */,
 				B34A696EF5784BDFBFDD3963 /* Frameworks */,
@@ -210,6 +271,7 @@
 			children = (
 				F12AADC3197CD8EA00F2EFC1 /* TenByTen.app */,
 				F12AADD5197CD8EA00F2EFC1 /* TenByTenTests.xctest */,
+				F13A8FCD1988103C0087EBF1 /* Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,6 +314,25 @@
 			isa = PBXGroup;
 			children = (
 				F12AADDA197CD8EA00F2EFC1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F13A8FD01988103C0087EBF1 /* TenByTen Today Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F13A8FD31988103C0087EBF1 /* TodayViewController.swift */,
+				F13A8FD51988103C0087EBF1 /* MainInterface.storyboard */,
+				F13A8FD11988103C0087EBF1 /* Supporting Files */,
+			);
+			name = "TenByTen Today Extension";
+			path = Today;
+			sourceTree = "<group>";
+		};
+		F13A8FD11988103C0087EBF1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F13A8FD21988103C0087EBF1 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -342,10 +423,13 @@
 				F12AADC0197CD8EA00F2EFC1 /* Frameworks */,
 				F12AADC1197CD8EA00F2EFC1 /* Resources */,
 				29B125239EB94426A1451006 /* Copy Pods Resources */,
+				F13A8FE61988103C0087EBF1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F13A8FD81988103C0087EBF1 /* PBXTargetDependency */,
+				F13A8FDB1988103C0087EBF1 /* PBXTargetDependency */,
 			);
 			name = TenByTen;
 			productName = TenByTen;
@@ -376,6 +460,23 @@
 			productReference = F12AADD5197CD8EA00F2EFC1 /* TenByTenTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F13A8FCC1988103C0087EBF1 /* Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F13A8FE51988103C0087EBF1 /* Build configuration list for PBXNativeTarget "Today" */;
+			buildPhases = (
+				F13A8FC91988103C0087EBF1 /* Sources */,
+				F13A8FCA1988103C0087EBF1 /* Frameworks */,
+				F13A8FCB1988103C0087EBF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Today;
+			productName = Today;
+			productReference = F13A8FCD1988103C0087EBF1 /* Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -392,6 +493,10 @@
 					F12AADD4197CD8EA00F2EFC1 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = F12AADC2197CD8EA00F2EFC1;
+					};
+					F13A8FCC1988103C0087EBF1 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = FCFUAUMXPQ;
 					};
 				};
 			};
@@ -416,6 +521,7 @@
 			targets = (
 				F12AADC2197CD8EA00F2EFC1 /* TenByTen */,
 				F12AADD4197CD8EA00F2EFC1 /* TenByTenTests */,
+				F13A8FCC1988103C0087EBF1 /* Today */,
 			);
 		};
 /* End PBXProject section */
@@ -486,6 +592,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F13A8FCB1988103C0087EBF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F13A8FD61988103C0087EBF1 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +701,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F13A8FC91988103C0087EBF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1EFFB4219881753003F31AB /* ViewModel.swift in Sources */,
+				F1EFFB4819882198003F31AB /* AFURLConnectionOperation+RACSupport.m in Sources */,
+				F1EFFB41198816BB003F31AB /* NewsServiceProtocol.swift in Sources */,
+				F13A8FD41988103C0087EBF1 /* TodayViewController.swift in Sources */,
+				F1EFFB40198816B9003F31AB /* TenByTenService.swift in Sources */,
+				F1EFFB4719882194003F31AB /* AFHTTPSessionManager+RACSupport.m in Sources */,
+				F1EFFB491988219D003F31AB /* RACSubscriber+AFProgressCallbacks.m in Sources */,
+				F1EFFB3F198816B6003F31AB /* NSData+TenByTen.swift in Sources */,
+				F1EFFB461988218F003F31AB /* AFHTTPRequestOperationManager+RACSupport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -594,6 +724,16 @@
 			isa = PBXTargetDependency;
 			target = F12AADC2197CD8EA00F2EFC1 /* TenByTen */;
 			targetProxy = F12AADD6197CD8EA00F2EFC1 /* PBXContainerItemProxy */;
+		};
+		F13A8FD81988103C0087EBF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F13A8FCC1988103C0087EBF1 /* Today */;
+			targetProxy = F13A8FD71988103C0087EBF1 /* PBXContainerItemProxy */;
+		};
+		F13A8FDB1988103C0087EBF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F13A8FCC1988103C0087EBF1 /* Today */;
+			targetProxy = F13A8FDA1988103C0087EBF1 /* PBXContainerItemProxy */;
 		};
 		F1AA32AB1980F670005C9FEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -703,7 +843,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: andrew halls (7ZLNBG2SNT)";
 				INFOPLIST_FILE = TenByTen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -717,7 +857,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: andrew halls (7ZLNBG2SNT)";
 				INFOPLIST_FILE = TenByTen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -765,6 +905,60 @@
 			};
 			name = Release;
 		};
+		F13A8FDC1988103C0087EBF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: andrew halls (7ZLNBG2SNT)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+					"\"${PODS_ROOT}/Headers/MMProgressHUD\"",
+				);
+				INFOPLIST_FILE = Today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ahalls/Work/TenByTenProject/tenbyten/TenByTen/Pods/build/Debug-iphoneos",
+				);
+				PODS_ROOT = "${SRCROOT}/../Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = TenByTen/Bridge.h;
+			};
+			name = Debug;
+		};
+		F13A8FDD1988103C0087EBF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: andrew halls (7ZLNBG2SNT)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode6-Beta4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+					"\"${PODS_ROOT}/Headers/MMProgressHUD\"",
+				);
+				INFOPLIST_FILE = Today/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ahalls/Work/TenByTenProject/tenbyten/TenByTen/Pods/build/Debug-iphoneos",
+				);
+				PODS_ROOT = "${SRCROOT}/../Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = TenByTen/Bridge.h;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -791,6 +985,15 @@
 			buildConfigurations = (
 				F12AADE3197CD8EA00F2EFC1 /* Debug */,
 				F12AADE4197CD8EA00F2EFC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F13A8FE51988103C0087EBF1 /* Build configuration list for PBXNativeTarget "Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F13A8FDC1988103C0087EBF1 /* Debug */,
+				F13A8FDD1988103C0087EBF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
